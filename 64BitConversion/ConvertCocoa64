@@ -1,0 +1,182 @@
+#!/usr/bin/env ruby
+#
+# For each file given on the command line, this script invokes a modified version of the Cocoa 64-bit conversion script called  
+# ConvertCocoa64-aux.tops. The tops script modifies the contents of the files, and also inserts warnings of the form
+# '#warning 64BIT: Check formatting arguments' above any line that looks like it contains a printf-style format string.
+# It also inserts special tags around function or method parameters that are known to be format strings. This script removes
+# the "check formatting" warning for any tagged format string that does not contain a printf token that needs to be checked.
+
+USAGE = 
+'Usage: ConvertCocoa64 source_files...
+
+This script converts Cocoa sources to 64-bit.
+It assumes careful inspection of changes and additional hand edits after the automated conversion.
+This script modifies each file in place. It is highly recommended to run this script on a
+copy of your sources, and afterwards use a tool such as FileMerge to inspect all changes.
+
+ConvertCocoa64 replaces the Cocoa64.tops process which shipped with Leopard developer tools. 
+Most of the underlying functionality is the same, but this script does a better job with 
+printf-style format strings, generating much fewer warnings.
+
+ConvertCocoa64 utilizes the ConvertCocoa64-aux.tops script located in the same directory
+as ConvertCocoa64. Unlike Cocoa64.tops, ConvertCocoa64-aux.tops is meant for use with this 
+script only. Do not run it separately.
+
+Please refer to the "64-Bit Transition Guide for Cocoa" more info about 64-bit Cocoa conversion:
+  http://developer.apple.com/documentation/Cocoa/Conceptual/Cocoa64BitGuide/index.html  
+'
+
+if ARGV.length == 0
+  puts USAGE
+  exit 1
+end
+
+require 'strscan'
+
+$DEBUG = false
+TOPS_SCRIPT_FILE = File.join(File.dirname(__FILE__), 'ConvertCocoa64-aux.tops')
+
+# Version of String#scan_until that only returns the skipped part of the string
+def scan_until(ss, str)
+  skipped = ss.scan_until(Regexp.new(str))
+  if skipped != nil
+    skipped.slice!(str)
+    return skipped
+  else
+    return ""
+  end
+end
+
+class PostProcessor  
+  def initialize(filename)
+    @format_start_tag = '64BIT_CHECKFORMAT_START'
+    @format_end_tag = '64BIT_CHECKFORMAT_END'
+    @format_start_tag_regexp = Regexp.new(@format_start_tag)
+    @format_end_tag_regexp = Regexp.new(@format_end_tag)
+    
+    ext = filename.split('.').last
+    if ext == 'c'
+        @lang = :C
+    elsif ext == 'm'
+        @lang = :ObjC
+    elsif ext == 'cc' or ext == 'cp' or ext == 'cxx' or ext == 'cpp' or ext == 'CPP' or ext == 'c++' or ext == 'C'
+        @lang = :CPP
+    elsif ext == 'mm' or ext == 'M'
+        @lang = :ObjCPP
+    else
+        @lang = :UNKLANG
+    end
+    
+    # Run tops script on file copy.
+    tops_output = `tops -scriptfile "#{TOPS_SCRIPT_FILE}" "#{filename}" 2>&1`
+    if $? != 0 then
+      puts "Could not run tops: #{tops_output}"
+      exit 1
+    end
+    
+    @contents = IO.read(filename)
+  end
+  
+  def process()
+    check_tgmath()
+    check_formats()
+    
+    return @contents
+  end
+  
+  # tgmath currently isn't working well enough in C++, so we must choose between the tgmath function and the non-existing macro.
+  def check_tgmath()
+    cplusplus = @lang == :CPP or @lang == :ObjCPP
+    add_include = false
+    while @contents[/64BIT_CHOOSE\(([_a-zA-Z0-9]*),([_a-zA-Z0-9]*)\)/] != nil
+      if cplusplus
+        @contents.gsub!($~.to_s, $2)
+      else
+        @contents.gsub!($~.to_s, $1)
+        add_include = true
+      end
+    end
+    
+    if add_include
+      index = @contents.rindex(/#(include|import)\s*("|<).*("|>)$/)
+      index = 0 if index == nil
+      @contents.insert((index + ($~.to_s).length + 1), "#include <tgmath.h>\n")
+    end
+  end
+  
+  # Scans through file contents and removes 64BIT_CHECKFORMAT_START and 64BIT_CHECKFORMAT_END tags and unnecessary "check formatting" warnings.
+  def check_formats()
+    @ss = StringScanner.new(@contents)
+    
+    @result = String.new
+    while ((idx = @ss.rest.index(@format_start_tag)) != nil) && idx < @ss.rest.index(@format_end_tag)
+      recurse()
+    end
+    @result << @ss.rest if !@ss.eos?()
+    
+    # Eliminate extra newlines created by the tops script
+    @result.lstrip!
+    
+    @contents = @result
+  end
+  
+  # Recurse through nested 64BIT_CHECKFORMAT_START and 64BIT_CHECKFORMAT_END markers
+  def recurse()
+    recursed = false
+    while ((idx = @ss.rest.index(@format_start_tag)) != nil) && idx < @ss.rest.index(@format_end_tag)
+      @result << scan_until(@ss, @format_start_tag)
+      self.recurse()
+      recursed = true # If there are nested format checks, then this level definitely isn't a constant string. Don't check it and remove the warning.
+    end
+  
+    this_str = scan_until(@ss, @format_end_tag)
+    @result << this_str
+    
+    if !recursed && should_warn(this_str)
+      @result << "/*[WARN]*/" if $DEBUG
+      puts "Warn before format: '#{this_str}'" if $DEBUG
+    elsif this_str.strip().length() > 0
+      puts "Deleting warning before format: '#{this_str}'" if $DEBUG
+      delete_last_warning()
+    end
+  end
+  
+  def delete_last_warning()
+    start_idx = @result.rindex("#warning 64BIT: Check formatting arguments")
+    if start_idx == nil
+      return
+    end
+    end_idx = @result.index($/, start_idx)
+    
+    @result[start_idx..end_idx] = ""
+  end
+  
+  def should_warn(s)
+    if !(s.index('"') == 0 || s.index('@"') == 0 || s.index('CFSTR') == 0)
+      puts "Warn for #{s} (function call, variable used for format.)" if $DEBUG
+      result = true
+    else
+      result = (s =~ /%[#0\-\+ ]*([^@sScCpl])/) != nil
+      puts "Warn for #{s} because it matches the regexp" if $DEBUG && result
+    end
+    
+    return result
+  end
+
+end
+
+for file in ARGV
+  puts "Processing #{file}"
+  
+  begin
+    checker = PostProcessor.new(file)
+    new_contents = checker.process()
+  rescue
+    puts "Could not process the file '#{file}' because of this error: #{$!}"
+    next
+  end
+
+  f = File.new(file, File::CREAT | File::TRUNC | File::WRONLY)
+  f.write(new_contents)
+  f.close
+end

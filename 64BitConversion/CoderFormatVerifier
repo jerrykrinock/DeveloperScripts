@@ -1,0 +1,275 @@
+#!/usr/bin/python
+
+# This script which can be used to verify the consistency of old archiving code after 64-bit conversion. 
+# The script works by replacing variadic NSCoder method calls to typechecked function calls. 
+# Basic usage is to pass it a directory - it will recursively modify all the .m and .M files in-place, and output the function prototypes to stdout. 
+# Copy and paste the function prototypes into your prefix header, compile the code, and then inspect any compiler errors that you get. (Link errors are expected because the script only generates function prototypes.) 
+# Run it without any arguments for usage information.
+
+import sys, getopt, re, difflib, os
+
+# A set of the encode strings we used so we know which function prototypes to generate
+# Since Python 2.3.5 doesn't have sets, we fake it with a dictionary
+# Keys are tuples (munged_selector, encode_string), values are always True
+used_encode_strings = {}
+
+supported_encoded_types = ['c', 'i', 's', 'l', 'q', 'C', 'I', 'S', 'L', 'Q', 'f', 'd', 'B', '*', '@', '#', ':']
+corresponding_c_types = ['char', 'int', 'short', 'long', 'long long', 'unsigned char', 'unsigned int', 'unsigned short', 'unsigned long', 'unsigned long long', 'float', 'double', '_Bool', 'char *', 'id', 'Class', 'SEL']
+
+# TODO: formal parameters for encode operations can be pointers to const
+
+def print_err(x):
+	sys.stderr.writelines([x, "\n"])
+	sys.stderr.flush()
+	
+
+# return the function identifier for a given selector and encoded string
+def function_identifier(munged_selector, encode_string):
+	munged_encode_string = encode_string
+	munged_encode_string = munged_encode_string.replace("*", "_cstar_")
+	munged_encode_string = munged_encode_string.replace("@", "$")
+	munged_encode_string = munged_encode_string.replace("#", "_class_")
+	munged_encode_string = munged_encode_string.replace(":", "_sel_")
+	return "_CFV_" + munged_selector + "_" + munged_encode_string;
+
+# return the pointer-to-T type for the encoded type name
+def type_name_for_encoded_type(type):
+	if type not in supported_encoded_types: raise Exception, "Unknown type: " + type
+	result = corresponding_c_types[supported_encoded_types.index(type)]
+	if result[-1] == '*': result = result + '*'
+	else: result = result + ' *'
+	return result
+
+# return a full function prototype for the given selector and encoded string
+def generate_function_prototype_from_encode_string(munged_selector, encode_string):
+	munged_encode_string = encode_string
+	munged_encode_string = munged_encode_string.replace("*", "_cstar_")
+	munged_encode_string = munged_encode_string.replace("@", "$")
+	munged_encode_string = munged_encode_string.replace("#", "_class_")
+	munged_encode_string = munged_encode_string.replace(":", "_sel_")
+	
+	c_types = [type_name_for_encoded_type(encode_string[i]) for i in range(0, len(encode_string))]
+	
+	# we pass the type string as the first parameter
+	c_types[0:0] = ['const char *encodedTypeString']
+	
+	# hack (TODO: do this better) for the encode/decodeArrayOfObjCType methods which take a count parameter
+	if "ArrayOfObjCType" in munged_selector: c_types[1:1] = ['NSUInt count']
+	
+	type_list = ", ".join(c_types);
+	
+	return "void _CFV_" + munged_selector + "_" + munged_encode_string + "(" + type_list + ");";
+
+# The regexs we use
+
+class Matcher:
+	def __init__(self, munged_selector, regex_string, selector_fragments_to_remove):
+		self.munged_selector = munged_selector
+		self.initial_regex = re.compile(regex_string)
+		self.selector_fragments_to_remove = selector_fragments_to_remove
+
+	def replacement_for_expression(self, expression):
+		pound_warning = None
+		result = None
+		
+		# get the substring of our initial match
+		match = self.initial_regex.match(expression)
+		if match == None: return None, "Detected NSCoder call in need of typechecking, but it could not be parsed"
+		
+		# get the string of parameters
+		parameter_string = expression[match.end() : -1]
+		
+		# snip off our selector_fragments_to_remove (if any).  We expect to find exactly one of each of them
+		for fragment in self.selector_fragments_to_remove:
+			parameter_string, num_matches = re.subn(fragment, ', ', parameter_string)
+			if num_matches == 0: return None, "Unable to find expected fragment " + fragment + " in expression " + expression
+			if num_matches > 1: return None, "We got confused - found multiple fragments " + fragment + " in expression " + expression + " but only one expected"
+				
+		# Extract the first parameter.  It should be a string literal - if it's not, we have a pound warning.
+		# TODO: make this handle backslashes properly
+		first_parameter_match = re.search(r'\s*"([^"]*)"\s*,', parameter_string)
+		if first_parameter_match == None : return None, "First parameter seems to be the only parameter or does not appear to be a string literal"
+		
+		# Snip off the comma at the end of our string literal (which must exist since our RE matched it), any whitespace, and the starting and ending quotes
+		encode_string = first_parameter_match.group(1)
+		
+		# Do some verification of our encode string
+		for char in [encode_string[i] for i in range(0, len(encode_string))]:
+			if char not in supported_encoded_types:
+				pound_warning = "Unrecognized or unsupported character in encode string: '" + char + "'"
+				break
+		else:
+			# String verified successfully.  Record that we used this string so we can generate functions later.
+			used_encode_strings[(self.munged_selector, encode_string)] = True
+			result = function_identifier(self.munged_selector, encode_string) + "(" + parameter_string + ")"
+		
+		return result, pound_warning
+		
+
+	def process_data(self, data):
+		# get all the matches
+		search_location = 0
+		while True:
+			match = self.initial_regex.search(data, search_location)
+			if match == None: break
+			
+			expression_start, expression_end = match.start(), match.end()
+
+			line_of_match = 1 + data.count('\n', 0, expression_start)
+
+			# walk forwards counting [s and ]s until we hit a closing ]
+			bracket_count = 1
+			try:
+				while bracket_count > 0:
+					if data[expression_end] == '[' : bracket_count = bracket_count + 1
+					elif data[expression_end] == ']' : bracket_count = bracket_count - 1
+					expression_end = expression_end + 1
+			except IndexError:
+				pound_warning = "Unable to find closing square bracket"
+				search_location = expression_start + 1
+			
+			if bracket_count == 0:	
+			
+				entire_expression = data[expression_start : expression_end]
+				
+				# generate a replacement for entire_expression
+				replacement_string, pound_warning = self.replacement_for_expression(entire_expression)
+				
+				if replacement_string == None:
+					search_location = expression_end
+				else:
+					# perform the replacement
+					data = data[:expression_start] + replacement_string + data[expression_end:]
+				
+					# we are going to replace entire_expression with replacement_string; munge our search_location properly
+					search_location = expression_end + len(replacement_string) - len(entire_expression)
+					
+					# insert the comment if desired
+					if leave_comments:
+						comment_string = "/* CFV: " + entire_expression + " */\n"
+						
+						whitespace_match = re.search(r"[ \t]*$", data[0:expression_start])
+						if whitespace_match != None: comment_string = whitespace_match.group() + comment_string
+						
+						# go to the line before us
+						index_of_prior_newline = data.rfind('\n', 0, expression_start)
+						if index_of_prior_newline == -1: data = comment_string + data
+						else: data = data[:index_of_prior_newline+1] + comment_string + data[index_of_prior_newline+1:]
+			
+			if pound_warning != None:
+				pound_warning_string = "#warning CoderFormatVerifier: " + pound_warning + "\n"
+				# go to the line before us and insert the pound_warning_string
+				# TODO: don't insert a warning if it's already there (make us idempotent)
+				index_of_prior_newline = data.rfind('\n', 0, expression_start)
+				if index_of_prior_newline == -1: data = pound_warning_string + data
+				else: data = data[:index_of_prior_newline+1] + pound_warning_string + data[index_of_prior_newline+1:]
+				search_location = search_location + len(pound_warning_string)
+				
+		return data
+
+matchers = []
+
+# encodeValuesOfObjCTypes:
+matcher = Matcher("encodeValuesOfObjCTypes", r"\[\s*[a-zA-Z_]\w*\s+encodeValuesOfObjCTypes\s*:", [])
+matchers.append(matcher)
+
+matcher = Matcher("decodeValuesOfObjCTypes", r"\[\s*[a-zA-Z_]\w*\s+decodeValuesOfObjCTypes\s*:", [])
+matchers.append(matcher)
+
+matcher = Matcher("encodeArrayOfObjCType", r"\[\s*[a-zA-Z_]\w*\s+encodeArrayOfObjCType\s*:", [r"count\s*:", r"at\s*:"])
+matchers.append(matcher)
+
+matcher = Matcher("decodeArrayOfObjCType", r"\[\s*[a-zA-Z_]\w*\s+decodeArrayOfObjCType\s*:", [r"count\s*:", r"at\s*:"])
+matchers.append(matcher)
+
+matcher = Matcher("encodeValueOfObjCType", r"\[\s*[a-zA-Z_]\w*\s+encodeValueOfObjCType\s*:", [r"at\s*:"])
+matchers.append(matcher)
+
+matcher = Matcher("decodeValueOfObjCType", r"\[\s*[a-zA-Z_]\w*\s+decodeValueOfObjCType\s*:", [r"at\s*:"])
+matchers.append(matcher)
+
+
+# --Global variables controlling our behavior--
+
+# Simulation is specified with -S and causes us to output the changes we would make instead of actually making them
+simulation = False
+
+# Should we descend directories recursively?
+recursive = True
+
+# When replacing an expression, do we leave the previous line in a comment?
+leave_comments = True
+
+def process_data(data):
+	for matcher in matchers:
+		data = matcher.process_data(data)
+	return data
+
+def process_argument(argument):
+	# process directories recursively if requested
+	if os.path.isdir(argument):
+		if recursive:
+			for root, dirs, files in os.walk(argument):
+				for name in files:
+					if re.search(r"\.m$", name, re.IGNORECASE) != None:
+						process_argument(os.path.join(root, name))
+						
+	else:
+		try: file = open(argument, 'r+')
+		except:
+			print_err("Unable to open file " + argument)
+			return
+			
+		try: file_data = file.read()
+		except:
+			print_err("Unable to read file " + argument)
+			return
+			
+		munged_data = process_data(file_data)
+		
+		# print a diff if we're simulating
+		if simulation:
+			if munged_data != None:
+				file_list = [x + "\n" for x in file_data.split("\n")]
+				munged_list = [x + "\n" for x in munged_data.split("\n")]
+				diff = difflib.unified_diff(file_list, munged_list)
+				sys.stdout.writelines(diff)
+		
+		# perform the change
+		if not simulation:
+			file.truncate(0)
+			file.seek(0)
+			file.write(munged_data)
+		
+		file.close()
+
+def usage():
+	print "Usage: CoderFormatVerifier [--show-diffs] [--no-recurse] [--no-comments] file1 file2..."
+	sys.exit(2)
+
+# Process our command line parameters
+options, arguments = getopt.getopt(sys.argv[1:], 'NDC', ['no-recurse', 'show-diffs', 'no-comments'])
+for key, value in options:
+	if key == "-S": simulation = True
+	elif key == "--show-diffs": simulation = True
+	elif key == "-N": recursive = False
+	elif key == "--no-recurse": recursive = False
+	elif key == "-C": leave_comments = False
+	elif key == "--no-comments": leave_comments = False
+	else: usage()
+
+if len(arguments) == 0: usage()
+
+# process each of our arguments
+for argument in arguments:
+	if os.path.isdir(argument):
+		for root, dirs, files in os.walk(argument):
+			for name in files:
+				if re.search(r"\.m$", name, re.IGNORECASE) != None:
+					process_argument(os.path.join(root, name))
+	else: process_argument(argument)
+
+# then output our function prototypes
+for munged_selector, encode_string in used_encode_strings.keys():
+	print generate_function_prototype_from_encode_string(munged_selector, encode_string)
+

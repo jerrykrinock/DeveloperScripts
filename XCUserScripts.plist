@@ -1,0 +1,4230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScript</string>
+		<key>isFileScript</key>
+		<integer>0</integer>
+		<key>keyEquivalent</key>
+		<string></string>
+		<key>language</key>
+		<string>xcode.lang.sh</string>
+		<key>name</key>
+		<string>Firefox - Repro Andy Hewitt</string>
+		<key>script</key>
+		<string>#!/bin/sh
+
+cp -fp /Users/jk/Library/Application\ Support/Firefox/Profiles/ieri3hz1.default/BadAll/*.* "/Users/jk/Library/Application Support/Firefox/Profiles/ieri3hz1.default/"
+
+rm -Rf ~/Library/Preferences/com.sheepsystems.BookMacster.plist
+
+defaults write com.sheepsystems.BookMacster LicenseeName 'Bonehead 134679'
+defaults write com.sheepsystems.BookMacster LicenseKey 'lFsJQdkNuJPV8mo6slrRtBfHOfCO9ZgfWH362ure45M5cqdD9VYbp2JbiUiVgxIqkvs/0AxcSDvbKlODzE8iOmNoRnJN0QfZlS78kx9oIzpKnhJMModexZOS049inHXY40qyTDZ4XdOE/GCAUeidi582IRS7YpVy6pJByv5Q+STfjgMAdXuvm1mQW4wavXOI72MLG/He9QRhKXM7Bnp//AN3Tzlf6Lsp2OpWqMEp0gzZLw1dpnZlaTCc5zk2Z3hHCRmRv7iOw5D/dT4r6k5MJ2Acci2w1XKRiAeXXbugGFjwOHMKK7dSuZ+jh9OcBH34xddcHSMmxnK5NGngJvei7g=='
+</string>
+		<key>scriptError</key>
+		<integer>1</integer>
+		<key>scriptInput</key>
+		<integer>0</integer>
+		<key>scriptOutput</key>
+		<integer>3</integer>
+		<key>scriptWorkingDirectory</key>
+		<integer>3</integer>
+		<key>uuid</key>
+		<string>F4DC0F8A-3166-4163-9148-4CC049E57754</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScript</string>
+		<key>isFileScript</key>
+		<integer>0</integer>
+		<key>keyEquivalent</key>
+		<string></string>
+		<key>language</key>
+		<string>xcode.lang.sh</string>
+		<key>name</key>
+		<string>HateCoreData</string>
+		<key>script</key>
+		<string>#!/bin/sh
+
+cp /Users/jk/Library/Application\ Support/BookMacster/Bookmarkshelf\ Documents/0Start2.bkmslf /Users/jk/Library/Application\ Support/BookMacster/Bookmarkshelf\ Documents/0Start.bkmslf
+
+/Users/jk/Documents/Programming/Projects/BookMacster/Test/Scripts/testbookmarks.pl Few Camino Chrome Chromium Firefox iCab OmniWeb Opera Safari Shiira
+</string>
+		<key>scriptError</key>
+		<integer>1</integer>
+		<key>scriptInput</key>
+		<integer>1</integer>
+		<key>scriptOutput</key>
+		<integer>3</integer>
+		<key>scriptWorkingDirectory</key>
+		<integer>0</integer>
+		<key>uuid</key>
+		<string>FFBEFA0A-55E9-4CC5-8432-28D7387B2796</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScript</string>
+		<key>isFileScript</key>
+		<integer>0</integer>
+		<key>keyEquivalent</key>
+		<string></string>
+		<key>language</key>
+		<string>xcode.lang.sh</string>
+		<key>name</key>
+		<string>Opera-Restore-1.7</string>
+		<key>script</key>
+		<string>cp /Users/jk/Library/Opera/bookmarksOld.adr /Users/jk/Library/Opera/bookmarks.adr
+
+cd /Users/jk/Library/Application\ Support/BookMacster
+
+cp Jerry1.7/*.* .
+mv Jerry.bkmslf Bookmarkshelf\ Documents/</string>
+		<key>scriptError</key>
+		<integer>1</integer>
+		<key>scriptInput</key>
+		<integer>1</integer>
+		<key>scriptOutput</key>
+		<integer>3</integer>
+		<key>scriptWorkingDirectory</key>
+		<integer>0</integer>
+		<key>uuid</key>
+		<string>1F26D8F0-268C-4A04-8830-DDC0A4D8DA8B</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScript</string>
+		<key>isFileScript</key>
+		<integer>0</integer>
+		<key>keyEquivalent</key>
+		<string></string>
+		<key>language</key>
+		<string>xcode.lang.sh</string>
+		<key>name</key>
+		<string>Screw Scotti</string>
+		<key>script</key>
+		<string>#!/bin/bash
+
+~/bin/quit -fan "Google Chrome"
+
+cp -Rfp "/Users/jk/Library/Application Support/Google/Chrome/Default/BookmarksScrewScotti" "/Users/jk/Library/Application Support/Google/Chrome/Default/Bookmarks"
+
+open -a "Google Chrome"
+</string>
+		<key>scriptError</key>
+		<integer>1</integer>
+		<key>scriptInput</key>
+		<integer>0</integer>
+		<key>scriptOutput</key>
+		<integer>0</integer>
+		<key>scriptWorkingDirectory</key>
+		<integer>3</integer>
+		<key>uuid</key>
+		<string>99B928D7-69A7-4113-8F06-1011C1A4CD6C</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScript</string>
+		<key>isFileScript</key>
+		<integer>0</integer>
+		<key>keyEquivalent</key>
+		<string></string>
+		<key>language</key>
+		<string>xcode.lang.sh</string>
+		<key>name</key>
+		<string>Carol's Bkmslf and Exids</string>
+		<key>script</key>
+		<string>cp -fp /Users/jk/Documents/Programming/Projects/BookMacster/TroubleData/Carol_Kino/BookMacster_Trouble/Bkmslfs/\[1\]Bookmarkshelf-002.bkmslf /Users/jk/Library/Application\ Support/BookMacster/Bookmarkshelf\ Documents/\[1\]Bookmarkshelf-002.bkmslf
+
+cp -fp /Users/jk/Documents/Programming/Projects/BookMacster/TroubleData/Carol_Kino/BookMacster_Trouble/AppSupport/Exids-39C69B20-F38E-48F2-B1CF-6A0F32F7F2BC.sql /Users/jk/Library/Application\ Support/BookMacster/Exids-39C69B20-F38E-48F2-B1CF-6A0F32F7F2BC.sql</string>
+		<key>scriptError</key>
+		<integer>1</integer>
+		<key>scriptInput</key>
+		<integer>1</integer>
+		<key>scriptOutput</key>
+		<integer>3</integer>
+		<key>scriptWorkingDirectory</key>
+		<integer>0</integer>
+		<key>uuid</key>
+		<string>21270A84-9F7A-4030-A8E0-4AD777D8018B</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScript</string>
+		<key>isFileScript</key>
+		<integer>0</integer>
+		<key>keyEquivalent</key>
+		<string></string>
+		<key>language</key>
+		<string>xcode.lang.sh</string>
+		<key>name</key>
+		<string>Be FFDef 1.3.18</string>
+		<key>script</key>
+		<string>cd /Users/jk/Library/Application\ Support/Firefox/Profiles/dev/
+
+# Use John Stovell's 'quit' bash script with my -f addition
+~/bin/quit -f Firefox BookMacster
+
+rm -f places.sqlite.corrupt
+rm -f places.sqlite-journal
+rm -f places.sqlite-shm
+rm -f places.sqlite-wal
+rm -Rf bookmarkbackups
+cp -pX placesFF3Def.sqlite places.sqlite
+
+cd /Users/jk/Library/Application\ Support/BookMacster/
+
+# Clean up
+rm -f *.sql
+rm -f Bookmarkshelf\ Documents/*.*.*.bkmslf
+rm -f Bookmarkshelf\ Documents/FFDef1318.bkmslf
+
+# Copy the Bookmarkshelf
+cp -p FFDef1318/FFDef1318.bkmslf ./Bookmarkshelf\ Documents
+
+# Copy the Logs, Exids, Settings, and Diaries
+cp -p FFDef1318/*.sql ./	
+
+defaults write com.sheepsystems.BookMacster lastVersion 1.3.18
+
+echo "Old files have been copied back into place, and BookMacster and Firefox have been quit."
+</string>
+		<key>scriptError</key>
+		<integer>1</integer>
+		<key>scriptInput</key>
+		<integer>1</integer>
+		<key>scriptOutput</key>
+		<integer>3</integer>
+		<key>scriptWorkingDirectory</key>
+		<integer>0</integer>
+		<key>uuid</key>
+		<string>885AC9BE-EDD6-402C-AA6B-9762CEC636D1</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScript</string>
+		<key>isFileScript</key>
+		<integer>0</integer>
+		<key>keyEquivalent</key>
+		<string></string>
+		<key>language</key>
+		<string>xcode.lang.sh</string>
+		<key>name</key>
+		<string>Be Few 1.3.18</string>
+		<key>script</key>
+		<string>cd /Users/jk/Library/Application\ Support/BookMacster/
+
+# Clean up
+rm -f *.sql
+
+# Copy the Bookmarkshelfs
+cp -p Few1.3.18/*.bkmslf ./Bookmarkshelf\ Documents
+
+# Copy the Logs, Exids, Settings, and Diaries
+cp -p Few1.3.18/*.sql ./	
+
+defaults write com.sheepsystems.BookMacster lastVersion 1.3.18
+</string>
+		<key>scriptError</key>
+		<integer>1</integer>
+		<key>scriptInput</key>
+		<integer>1</integer>
+		<key>scriptOutput</key>
+		<integer>3</integer>
+		<key>scriptWorkingDirectory</key>
+		<integer>0</integer>
+		<key>uuid</key>
+		<string>2E6E2E1A-D98F-4764-B5AE-A7C5D45A04C8</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScriptGroup</string>
+		<key>name</key>
+		<string>Browser Bookmarks</string>
+		<key>subNodes</key>
+		<array>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>All : 1EmptyFolder</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+/Users/jk/Documents/Programming/Projects/BookMacster/Test/Scripts/testbookmarks.pl 1EmptyFolder Camino Chrome Firefox Firefox-dev OmniWeb Opera Safari Shiira</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>D9F573E8-E2C7-44E4-B644-D052CE12E268</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>All : B37 (with .bkmslf, auxMocs)</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+/Users/jk/Documents/Programming/Projects/BookMacster/Test/Scripts/testbookmarks.pl B37 Camino Chrome Firefox Firefox-dev OmniWeb Opera Safari Shiira
+
+# It took me about a half hour to get the quoting to work in what follows
+
+srcDir="/Users/jk/Documents/Programming/Projects/BookMacster/Test/Data/Bkmslfs/B37"
+
+dstDir="/Users/jk/Library/Application Support/BookMacster"
+
+sfx="-1D6B9A1A-2DB9-4CD6-86F2-87E90A1B2E39.sql"
+
+s1=$srcDir/*$sfx
+s2="$dstDir/"
+s3=$srcDir/B37.bkmslf
+s4="$dstDir/Bookmarkshelf Documents/B37.bkmslf"
+
+cp -Rfp $s1 "$s2"
+cp -Rfp $s3 "$s4"
+</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>F339D13A-C1FE-4DB3-8D69-1FB77999ECEB</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>All : Default</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+/Users/jk/Documents/Programming/Projects/BookMacster/Test/Scripts/testbookmarks.pl Default Camino Chrome Firefox Firefox-dev OmniWeb Opera Safari Shiira</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>9A2D6F9A-68B3-4605-BEEA-FB5BED87A47B</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>All : Few</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+/Users/jk/Documents/Programming/Projects/BookMacster/Test/Scripts/testbookmarks.pl Few Camino Chrome Chromium Firefox Firefox-dev iCab OmniWeb Opera Safari Shiira
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>E1B20A2C-B86D-47F4-B4C8-03A1CB4CA0FE</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>All : None</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+/Users/jk/Documents/Programming/Projects/BookMacster/Test/Scripts/testbookmarks.pl None Camino Chrome Chromium Firefox Firefox-dev iCab OmniWeb Opera Safari Shiira
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>D438B8A1-48B6-451E-86A6-CFC051CC6878</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>All : Stress1</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+/Users/jk/Documents/Programming/Projects/BookMacster/Test/Scripts/testbookmarks.pl Stress1 Camino Chrome Firefox Firefox-dev OmniWeb Opera Safari Shiira</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>6BE01B26-2971-47DF-9B09-C33C62E53A2E</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>iCab : Few</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+/Users/jk/Documents/Programming/Projects/BookMacster/Test/Scripts/testbookmarks.pl Few iCab
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>0</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>3BD405D4-39E8-4EBC-ADC1-A339754D3B98</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>OmniWeb : Empty</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+/Users/jk/Documents/Programming/Projects/BookMacster/Test/Scripts/testbookmarks.pl Empty OmniWeb
+</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>313BD1C9-AAE2-4576-8A46-450761DC5DB6</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Safari : Few</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+/Users/jk/Documents/Programming/Projects/BookMacster/Test/Scripts/testbookmarks.pl Few Safari</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>0</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>16DB6AE4-EF96-4E0E-BCF0-ABC631D803C2</string>
+			</dict>
+		</array>
+		<key>uuid</key>
+		<string>2E7AF369-E309-45AE-B90E-2EA14A48C78B</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScriptGroup</string>
+		<key>name</key>
+		<string>Browser Addons</string>
+		<key>subNodes</key>
+		<array>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Make NPAPI Plugin look downrev</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+~/Documents/Programming/Builds/Release/plistwrite -v 44 CFBundleVersion /Users/jk/Library/Internet\ Plug-Ins/SheepSystemsNPAPIPlugin.plugin/Contents/Info.plist 
+
+~/Documents/Programming/Builds/Release/plistwrite -v 44 CFBundleShortVersionString /Users/jk/Library/Internet\ Plug-Ins/SheepSystemsNPAPIPlugin.plugin/Contents/Info.plist 
+
+
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>0</integer>
+				<key>scriptOutput</key>
+				<integer>0</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>3C9433B2-A8D6-4655-83D7-AB14230F57DC</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Chrome Remove Plugin, Extensions</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+rm -Rf "/Users/jk/Library/Application Support/Google/Chrome/Default/Extensions/"
+
+rm -Rf "/Users/jk/Library/Internet Plug-Ins/SheepSystemsNPAPIPlugin.plugin"
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>0</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>885E9220-C3FD-44CD-8DC4-C72361321489</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Chrome Renew Extension</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+open /Users/jk/Documents/Programming/Builds/Debug/BookMacster.app/Contents/Resources/SheepSystemsChromeExtension.crx
+</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>4</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>AA314C2B-0624-4CD9-A1A8-EFEC54000754</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Firefox (default): Quit &amp; Remove Extension</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+# Use John Stovell's 'quit' bash script with my -f addition
+~/bin/quit -f Firefox
+
+extensionsDir="/Users/jk/Library/Application Support/Firefox/Profiles/ieri3hz1.default/extensions"
+
+targetDir=$extensionsDir/firefoxextension@sheepsystems.com
+rm -Rf "$targetDir"
+
+targetDir=$extensionsDir/staged
+rm -Rf "$targetDir"
+
+targetDir=$extensionsDir/staged-xpis
+rm -Rf "$targetDir"
+</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>7E70F0BB-34F8-4EAF-AC3E-9643F1F893EB</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Firefox (dev): Quit &amp; Remove Extension</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+# Use John Stovell's 'quit' bash script with my -f addition
+~/bin/quit -f Firefox
+
+extensionsDir="/Users/jk/Library/Application Support/Firefox/Profiles/dev/extensions"
+
+targetDir=$extensionsDir/firefoxextension@sheepsystems.com
+rm -Rf "$targetDir"
+
+targetDir=$extensionsDir/staged
+rm -Rf "$targetDir"
+
+targetDir=$extensionsDir/staged-xpis
+rm -Rf "$targetDir"
+</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>4F83C236-26CE-4112-95AB-85BFD988A31A</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Firefox 3.6 (dev): Renew Extension</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+extensionsDir="/Users/jk/Library/Application Support/Firefox/Profiles/dev/extensions"
+
+if [ ! -d "$extensionsDir" ]; then
+    echo Whoops!  Expected Firefox profile directory does not exist: $extensionsDir
+else
+	extensionDir=$extensionsDir/firefoxextension@sheepsystems.com
+	rm -Rf "$extensionDir"
+
+	stagedExtensionsDir=$extensionsDir/staged
+	rm -Rf "$stagedExtensionsDir"
+fi
+
+/usr/bin/open -a "/Applications/Firefox_3_6.app" "/Users/jk/Documents/Programming/Builds/Debug/BookMacster.app/Contents/Resources/Firefox3/sheepsystemsfirefoxextension.xpi"
+</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>02BBAD89-6250-41C8-ABF4-BAC74ED220FF</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Firefox 4 (dev): Renew Extension</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+extensionsDir="/Users/jk/Library/Application Support/Firefox/Profiles/dev/extensions"
+
+if [ ! -d "$extensionsDir" ]; then
+    echo Whoops!  Expected Firefox profile directory does not exist: $extensionsDir
+else
+	extensionDir=$extensionsDir/firefoxextension@sheepsystems.com
+	rm -Rf "$extensionDir"
+
+	stagedExtensionsDir=$extensionsDir/staged
+	rm -Rf "$stagedExtensionsDir"
+fi
+
+/usr/bin/open -a "/Applications/Firefox.app" "/Users/jk/Documents/Programming/Builds/Debug/BookMacster.app/Contents/Resources/Firefox4/sheepsystemsfirefoxextension.xpi"
+</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>C13B983D-3CE4-40DA-B808-E80E9B35D12B</string>
+			</dict>
+		</array>
+		<key>uuid</key>
+		<string>AAD98A40-1DF4-4486-892A-6D4028752CB9</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScript</string>
+		<key>isFileScript</key>
+		<integer>0</integer>
+		<key>keyEquivalent</key>
+		<string></string>
+		<key>language</key>
+		<string>xcode.lang.sh</string>
+		<key>name</key>
+		<string>Be Chris Richardet</string>
+		<key>script</key>
+		<string>#!/bin/sh
+
+open "/Users/jk/Documents/AppleScripts/BookMacsterUninstall.app"
+
+sleep 10
+
+mkdir "/Users/jk/Library/Application Support/BookMacster/"
+
+mkdir "/Users/jk/Library/Application Support/BookMacster/Bookmarkshelf Documents/"
+
+# App preferences
+cp "/Users/jk/Documents/Programming/Projects/BookMacster/TroubleData/Chris_Richardet/BookMacster_Trouble/com.sheepsystems.BookMacster.plist" "/Users/jk/Library/Preferences/"
+
+# Application Support &gt; *.rawdata
+rm -f "/Users/jk/Library/Application\ Support/BookMacster/Delicious2|charltan|thisUser|||.rawdata"
+cp "/Users/jk/Documents/Programming/Projects/BookMacster/TroubleData/Chris_Richardet/BookMacster_Trouble/Delicious2|charltan|thisUser|||.rawdata" "/Users/jk/Library/Application Support/BookMacster/"
+
+# Application Support &gt; *.sql
+rm -f /Users/jk/Library/Application\ Support/BookMacster/*.sql
+cp "/Users/jk/Documents/Programming/Projects/BookMacster/TroubleData/Chris_Richardet/BookMacster_Trouble/Delicious2|charltan|thisUser|||.sql" "/Users/jk/Library/Application Support/BookMacster/Delicious2|charltan|thisUser|||.sql"
+cp "/Users/jk/Documents/Programming/Projects/BookMacster/TroubleData/Chris_Richardet/BookMacster_Trouble/Diaries.sql" "/Users/jk/Library/Application Support/BookMacster/Diaries.sql"
+cp "/Users/jk/Documents/Programming/Projects/BookMacster/TroubleData/Chris_Richardet/BookMacster_Trouble/Logs.sql" "/Users/jk/Library/Application Support/BookMacster/Logs.sql"
+cp "/Users/jk/Documents/Programming/Projects/BookMacster/TroubleData/Chris_Richardet/BookMacster_Trouble/Settings.sql" "/Users/jk/Library/Application Support/BookMacster/Settings.sql"
+
+# Bookmarkshelf
+cp "/Users/jk/Documents/Programming/Projects/BookMacster/TroubleData/Chris_Richardet/BookMacster_Trouble/BMShelf113.bkmslf" "/Users/jk/Library/Application Support/BookMacster/Bookmarkshelf Documents/BMShelf113.bkmslf"
+</string>
+		<key>scriptError</key>
+		<integer>1</integer>
+		<key>scriptInput</key>
+		<integer>0</integer>
+		<key>scriptOutput</key>
+		<integer>3</integer>
+		<key>scriptWorkingDirectory</key>
+		<integer>3</integer>
+		<key>uuid</key>
+		<string>40576D67-8246-496D-AF2E-4C5E92D7BC5C</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScript</string>
+		<key>isFileScript</key>
+		<integer>0</integer>
+		<key>keyEquivalent</key>
+		<string></string>
+		<key>language</key>
+		<string>xcode.lang.sh</string>
+		<key>name</key>
+		<string>Make Prior Run BookMacster 1.1.15</string>
+		<key>script</key>
+		<string>#!/bin/sh
+
+# In unix commands, trailing slash means "the contents of this directory, not the directory itself".
+
+rm -Rf "/Users/jk/Library/Application Support/BookMacster/"
+
+cp -Rf "/Users/jk/Library/Application Support/BookMacster_1.1.15/" "/Users/jk/Library/Application Support/BookMacster/"
+
+cp -f "/Users/jk/Library/Preferences/com.sheepsystems.BookMacster_1.1.15.plist" "/Users/jk/Library/Preferences/com.sheepsystems.BookMacster.plist"
+
+
+</string>
+		<key>scriptError</key>
+		<integer>1</integer>
+		<key>scriptInput</key>
+		<integer>0</integer>
+		<key>scriptOutput</key>
+		<integer>3</integer>
+		<key>scriptWorkingDirectory</key>
+		<integer>3</integer>
+		<key>uuid</key>
+		<string>0CDA12AC-FEF2-493A-8240-AC3D85A62B42</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScript</string>
+		<key>isFileScript</key>
+		<integer>0</integer>
+		<key>keyEquivalent</key>
+		<string></string>
+		<key>language</key>
+		<string>xcode.lang.sh</string>
+		<key>name</key>
+		<string>Be Tricia Romano</string>
+		<key>script</key>
+		<string>#!/bin/sh
+
+# Safari Bookmarks
+cp /Users/jk/Documents/Programming/Projects/BookMacster/TroubleData/Tricia_Romano/BookMacster_Trouble/Bookmarks.plist /Users/jk/Library/Safari/
+
+# Firefox Bookmarks
+cp /Users/jk/Documents/Programming/Projects/BookMacster/TroubleData/Tricia_Romano/BookMacster_Trouble/places.sqlite "/Users/jk/Library/Application Support/Firefox/Profiles/ieri3hz1.default/places.sqlite"
+
+# Chrome Bookmarks
+cp /Users/jk/Documents/Programming/Projects/BookMacster/TroubleData/Tricia_Romano/BookMacster_Trouble/Bookmarks "/Users/jk/Library/Application Support/Google/Chrome/Default/Bookmarks"
+
+echo "Copied Tricia's Safari, Firefox and Chrome."
+
+
+
+</string>
+		<key>scriptError</key>
+		<integer>1</integer>
+		<key>scriptInput</key>
+		<integer>0</integer>
+		<key>scriptOutput</key>
+		<integer>3</integer>
+		<key>scriptWorkingDirectory</key>
+		<integer>3</integer>
+		<key>uuid</key>
+		<string>685BAB73-00F1-43C9-9F04-0A4C4BDAEFFF</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScript</string>
+		<key>isFileScript</key>
+		<integer>0</integer>
+		<key>keyEquivalent</key>
+		<string></string>
+		<key>language</key>
+		<string>xcode.lang.sh</string>
+		<key>name</key>
+		<string>Google Log Out : Apple URL Loading Sys</string>
+		<key>script</key>
+		<string>#!/bin/sh
+
+osascript -e "tell application id \"com.apple.Safari\" to open location \"https://www.google.com/accounts/Logout\""
+</string>
+		<key>scriptError</key>
+		<integer>1</integer>
+		<key>scriptInput</key>
+		<integer>0</integer>
+		<key>scriptOutput</key>
+		<integer>3</integer>
+		<key>scriptWorkingDirectory</key>
+		<integer>3</integer>
+		<key>uuid</key>
+		<string>10117522-EA5D-473D-B395-BCE01B9B71AF</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScriptGroup</string>
+		<key>name</key>
+		<string>Open</string>
+		<key>subNodes</key>
+		<array>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>shell.sh</string>
+				<key>name</key>
+				<string>Open Path in Text Edit</string>
+				<key>script</key>
+				<string>#! /bin/sh
+#
+# Opens the selected file path in TextEdit
+
+xargs open -e 
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>0</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>04103ED5-1758-4881-BEDD-268AB9C31553</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>shell.sh</string>
+				<key>name</key>
+				<string>Open Path or URL</string>
+				<key>script</key>
+				<string>#! /bin/sh
+#
+# Opens the selected file path or URL
+
+xargs open
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>0</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>C8588D1C-9151-47CE-BE3C-0A54EAFDEC7E</string>
+			</dict>
+		</array>
+		<key>uuid</key>
+		<string>D8A081D7-4D08-4204-9047-04EBCC2F7C7A</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScriptGroup</string>
+		<key>name</key>
+		<string>Search</string>
+		<key>subNodes</key>
+		<array>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>shell.sh</string>
+				<key>name</key>
+				<string>Search Google for Selection</string>
+				<key>script</key>
+				<string>#! /bin/sh
+#
+# Searches www.google.com for the selected text
+
+INPUT=`cat -`
+
+open "http://www.google.com/search?ie=UTF-8&amp;q=${INPUT}&amp;btnG=Google+Search"</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>0</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>9A158C5D-8476-40DF-B0F3-C2E32106F5C1</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>shell.sh</string>
+				<key>name</key>
+				<string>Search Apple Developer Site for Selection</string>
+				<key>script</key>
+				<string>#! /bin/sh
+#
+# Searches developer.apple.com for the selected text
+
+INPUT=`cat -`
+
+open "http://developer.apple.com/cgi-bin/search.pl?q=${INPUT}&amp;ie=utf8&amp;oe=utf8"
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>0</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>AD8073E2-FF86-48C3-AA3D-778C13DF1741</string>
+			</dict>
+		</array>
+		<key>uuid</key>
+		<string>7AAE141E-344D-4CC2-B0D8-AD623D22FE4E</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScript</string>
+		<key>isFileScript</key>
+		<integer>0</integer>
+		<key>keyEquivalent</key>
+		<string></string>
+		<key>language</key>
+		<string>xcode.lang.sh</string>
+		<key>name</key>
+		<string>Clean XCode Caches (not finished)</string>
+		<key>script</key>
+		<string>#!/bin/sh
+
+#for path in "~/Library/Caches/Xcode*" "/Library/Caches/com.apple.Xcode.`id -u`" "/tmp/$USER"; do
+#		echo "Cleaning $path..."
+#		rm -rf $path
+#	done
+
+# /tmp/$USER is idiosyncratic because I configured Xcode to use it as the build directory.
+
+Bill</string>
+		<key>scriptError</key>
+		<integer>3</integer>
+		<key>scriptInput</key>
+		<integer>1</integer>
+		<key>scriptOutput</key>
+		<integer>6</integer>
+		<key>scriptWorkingDirectory</key>
+		<integer>0</integer>
+		<key>uuid</key>
+		<string>43A0B823-E681-4934-B56B-A84003EF0381</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScript</string>
+		<key>isFileScript</key>
+		<integer>0</integer>
+		<key>keyEquivalent</key>
+		<string></string>
+		<key>language</key>
+		<string>xcode.lang.sh</string>
+		<key>name</key>
+		<string>Help Viewer Hammer</string>
+		<key>script</key>
+		<string>#!/bin/sh
+# This script has been updated for Snow Leopard.
+
+# Kill any running instances of helpd
+
+/bin/ps -ax | awk '(/\/helpd/)  { if ($5 != "awk") print "kill " $1 }'  | /bin/sh
+
+# The above statement will kill all processes which have "/helpd " in their pathname.  First, it calls ps, which creates a stream of lines containing all processes and their names.  The -a option says to display others' processes as well as your own, so this will work if you put it in the root crontab or in the admin crontab, this will shut down others' processes.  The -x option says to display info about processes without controlling terminals, such as apps running under Mac OS X.  The result is piped to awk, which looks for all processes containing the string "/helpd".  The $5 extracts the fifth field (whatever is between the fourth whitespace and the fifth whitespace).    So the print kill statement is not executed if the fifth field is "awk".  The line listing the awk process will be, for example:
+#   23492 ttys003    0:00.00 awk (/\/helpd/)
+#Therefore, this keeps the process from killing itself.  (Probably it would be OK if it killed itself, since it should be the last one in the list, but obviously it is not good programming practice for a process to kill itself).   The $1 extracts the first field from each line, which is the process ID number, and prepends the word "kill" on it, so that the output awk is a stream which looks like
+#   kill 1001
+#   kill 1004
+#   kill 1006
+#   etc.
+# where the numbers 1001 etc. are the process numbers to be killed.  Finally, this is piped to a shell, which kills all of these processes. 
+
+# Reset Caches
+
+rm -Rf ~/Library/Caches/com.apple.helpui
+rm -Rf ~/Library/Caches/com.apple.helpd
+rm -Rf ~/Library/Preferences/com.apple.help*.plist
+
+# Switch on PrintURLInFooter
+
+defaults write com.apple.helpviewer PrintURLInFooter YES
+
+# The following line, switching on HelpViewerDebugging, is no longer supported in Snow Leopard.  If Apple ever reprises this feature, it would log Help Viewer errors.  For now, it is commented out
+# defaults write com.apple.helpviewer HelpViewerDebugging -bool YES
+
+echo Any running instances of the daemon helpd have been killed, Apple Help caches have been reset, and PrintURLInFooter has been turned on.  This will NOT cause Help Viewer windows to be closed.  However, clicking a link in a Help Viewer window will cause a new instance of helpd to launch.
+
+
+</string>
+		<key>scriptError</key>
+		<integer>1</integer>
+		<key>scriptInput</key>
+		<integer>0</integer>
+		<key>scriptOutput</key>
+		<integer>3</integer>
+		<key>scriptWorkingDirectory</key>
+		<integer>3</integer>
+		<key>uuid</key>
+		<string>9E3117A2-EF8D-4A73-A94E-9ADFA93548D8</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScriptGroup</string>
+		<key>name</key>
+		<string>Comments</string>
+		<key>subNodes</key>
+		<array>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string>@/</string>
+				<key>language</key>
+				<string>shell.perl</string>
+				<key>name</key>
+				<string>Un/Comment Selection</string>
+				<key>script</key>
+				<string>#! /usr/bin/perl -w
+#
+# un_commentLines.pl - 	Comments or uncomments the selected lines
+#			Uses '# ' for Perl and shell scripts; '// ' otherwise
+
+my $outputString = "";
+my $perlCmt = "#";
+my $cCmt = "//";
+
+# Get the first few lines of the file
+my $fileString = &lt;&lt;'HEADTEXT';
+%%%{PBXHeadText}%%%
+HEADTEXT
+
+
+# determine the type of file we have by looking for the #! line at the top
+# careful--it might already be commented out!
+my $commentString;
+if ($fileString =~ m!^($perlCmt|$cCmt)?#\!\s*.*?/perl|^($perlCmt|$cCmt)?#\!\s*.*?/sh!) {
+	$commentString = $perlCmt;
+} else {
+	$commentString = $cCmt;
+}
+
+my @selection = &lt;STDIN&gt;;       # read the selection from standard input
+
+# no chars in selection, so create an empty selection
+if (!@selection) {
+    push @selection, "";
+};  
+
+# add or remove comment markers depending on the state of the first line of the selection
+# if it is uncommented, comment all lines.  If it is commented, remove comment markers, if present
+my $firstLineOfSelection = $selection[0]; #get first line
+my $addingCommentsString = 1;
+if ($firstLineOfSelection =~ /^$commentString/) { #selection starts with comment
+    $addingCommentsString = 0;
+}
+
+foreach my $line (@selection) {
+    if ($addingCommentsString == 1) {
+        $outputString .= $commentString.$line;
+    } else {
+        $line =~ s/^$commentString//;
+        $outputString .= $line;
+    }
+}
+
+print "%%%{PBXSelection}%%%";
+print $outputString;
+print "%%%{PBXSelection}%%%";
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>1</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>CCC886A0-0579-48F5-B6D9-D97A23128C5C</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>shell.perl</string>
+				<key>name</key>
+				<string>Un/Backslash Selection</string>
+				<key>script</key>
+				<string>#! /usr/bin/perl -w
+#
+# backslashLines.pl - 	adds or deletes a backslash at the ends of the selected lines
+
+my $outputString = "";
+
+my @selection = &lt;STDIN&gt;;       # read the selection from standard input
+
+if (!@selection) { exit; };  # no chars in selection, nothing to do
+
+# add or remove backslash depending on the state of the first line of the selection
+my $firstLineOfSelection = $selection[0]; # get first line
+my $addingBackslash = 1;
+if ($firstLineOfSelection =~ /\\$/) { #selection ends with backslash
+    $addingBackslash = 0;
+}
+
+# get the length of the longest line
+my $longest=0;
+foreach my $line (@selection) {
+    my $lineLength = length($line);
+    if ($lineLength &gt;$longest) {
+        $longest = $lineLength;
+    }
+}
+
+# add an offset to the longest line, for location of continuation character
+my $paddedLength = $longest + 5;
+
+my $numLines = scalar(@selection);
+my $lastLineIndex= $numLines - 1;
+
+for (my $i = 0; $i &lt; $numLines ; $i++) {
+    my $line = $selection[$i];
+    if ($addingBackslash == 1) {
+        if ($i &lt; $lastLineIndex) { 
+            chomp $line;
+            my $paddedLine = sprintf("%-*s", $paddedLength, $line);
+            $outputString .= $paddedLine."\\\n";
+        } else { # don't add continuation character on last line
+            $outputString .= $line;
+        }
+    } else {
+        $line =~ s/\s*\\$//;
+        $outputString .= $line;
+    }
+}
+
+print "%%%{PBXSelection}%%%";
+print $outputString;
+print "%%%{PBXSelection}%%%";
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>1</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>FE9A0F57-671A-4E52-984B-C48CB62C7727</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScriptSeparator</string>
+				<key>uuid</key>
+				<string>1FAF9F0B-494B-4117-A876-FBFC8100902B</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Insert !!!:Name:Date</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+echo -n "// !!!:${USER}:"
+date +%Y%m%d | awk '{printf "%s", $1}'
+echo -n " %%%{PBXSelection}%%%"
+cat -
+echo -n "%%%{PBXSelection}%%%"</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>1</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>439221AC-F855-4202-97FD-AE3E687B81E7</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Insert ???:Name:Date</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+echo -n "// ???:${USER}:"
+date +%Y%m%d | awk '{printf "%s", $1}'
+echo -n " %%%{PBXSelection}%%%"
+cat -
+echo -n "%%%{PBXSelection}%%%"</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>1</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>D6E38EC1-FD95-444F-8DB5-C1A058E26097</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Insert :Name:Date</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+echo -n "// :${USER}:"
+date +%Y%m%d | awk '{printf "%s", $1}'
+echo -n " %%%{PBXSelection}%%%"
+cat -
+echo -n "%%%{PBXSelection}%%%"</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>1</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>61304851-C495-4CD1-9D96-BB965D7041F9</string>
+			</dict>
+		</array>
+		<key>uuid</key>
+		<string>544D53B7-4313-403E-BD91-8E610715FDA1</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScriptGroup</string>
+		<key>name</key>
+		<string>Code</string>
+		<key>subNodes</key>
+		<array>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>keyPathsForValuesAffecting...</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+echo "+ (NSSet*)keyPathsForValuesAffecting {"
+echo "	return [NSSet setWithObjects:"
+echo "			@\"\","
+echo "			nil] ;"
+echo "}"
+echo 
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>0</integer>
+				<key>scriptOutput</key>
+				<integer>4</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>B896A765-2AF1-45DE-BB4F-1CA4251DBE41</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Doc for parm error_p, result</string>
+				<key>script</key>
+				<string>#! /usr/bin/perl -w
+
+print " \@param    error_p  If not NULL and if an error occurs, upon return,\n" ;
+print " will point to an error object encapsulating what went wrong.\n" ;
+print " \@result   YES if the method completed successfully, otherwise NO\n" ;
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>0</integer>
+				<key>scriptOutput</key>
+				<integer>1</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>6C2EE79F-BD0B-4539-9F72-63D1470E6DAA</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string>~$@A</string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Place Accessor Defs on Clip.  (Select @property dirs or ivar decls)</string>
+				<key>script</key>
+				<string>#! /usr/bin/perl -w
+
+=com
+
+This program detects and handles 8 cases:
+
+CASE                              TYPICAL ATTRIBUTES
+object  retain  atomic            (retain)
+object  retain  nonatomic         (retain, nonatomic)
+object  assign  atomic            ()
+object  assign  nonatomic         (nonatomic)
+object  copy  atomic              (copy)
+object  copy  nonatomic           (copy, nonatomic)
+non-object  assign  atomic        ()
+non-object  assign  nonatomic     (nonatomic)
+
+Note that it is a good idea to use atomic accessors even for non-object instance variables.  Consider, for example, setting a two-member struct.  One member could be set, then execution preempted by another thread before the other member gets set.
+	
+=cut
+
+use strict;
+
+# To test this program, replace the following lines
+my $selection = &lt;&lt;'SELECTION';
+%%%{PBXSelectedText}%%%
+SELECTION
+# with these lines:
+=com
+my $selection = &lt;&lt; 'INPUT' ;
+
+// Objects
+@property (retain) Foo* foo;
+@property (retain, nonatomic) id foo ;
+@property  Foo* foo;
+@property ( nonatomic ) id foo ;
+@property (copy) Foo* foo;
+@property (copy, nonatomic) id foo ;
+
+// Non-objects
+@property char foo;
+@property ( nonatomic ) int foo ;
+
+INPUT
+=cut
+
+my @lines = split("\n", $selection) ;
+
+for my $aLine (@lines) {
+	my $commentLocation = index($aLine, "/") ;
+	# if "/" is not found, index() will return -1
+	if ($commentLocation &lt; 0) {
+		$commentLocation = 9999 ;
+	}
+	$aLine = substr($aLine, 0, $commentLocation) ;
+
+
+	$aLine =~ s/\s{2,}/ /g;  # Collapse consecutive spaces into one space
+	
+	# At this point, assume that $aLine is, for example
+	#   @property (retain, nonatomic)  NSString* foo ;
+	my $declarationLocation = index($aLine, ")") ;
+	# if ")" is not found, index() will return -1
+	if ($declarationLocation &lt; 0) {
+		$declarationLocation = index($aLine, '@property ') ;
+		if ($declarationLocation &gt;= 0) {
+			$declarationLocation += 10 ;
+		}
+		else {
+			$declarationLocation = 0 ;
+		}
+	}
+	my $declaration = substr($aLine, $declarationLocation) ;
+	my $isValidLine = ($declaration =~ m/(\w+)\s?(\*?)\s?(\w+)\s?;?/) ;
+	if (!$isValidLine) {
+		next ;
+	}	
+	my $typeName = $1 ;      # e.g., "NSString"
+	my $star = $2 ;          # e.g., "*"
+	my $propertyName = $3 ;  # e.g., "foo"
+	my $cappedPropertyName = uc(substr($propertyName,0,1)) . substr($propertyName,1) ;
+
+
+	my $didFindAttributes = ($aLine =~ m/\@property\s+\(([\w+, ^()]+)\)/) ;
+	my $attributesString = $1 ; # e.g., "retain, nonatomic"
+	my @attributes = () ;
+	if ($didFindAttributes) {
+		my @rawAttributes = split(", ", $attributesString) ;
+		for my $attribute (@rawAttributes) {
+			$attribute =~ s/ //g ;
+			push (@attributes, $attribute) ;
+		}
+	}
+	print "// *** Accessors based on \@property attributes: @attributes\n\n";
+	
+	my $isObject = (($star eq "*") || ($typeName eq "id")) ;
+	
+	my $ownIt = $isObject &amp;&amp; (
+		arrayRefContains(\@attributes, "retain")
+		||
+		arrayRefContains(\@attributes, "copy")
+		) ;
+	
+	my $retainNotCopy = arrayRefContains(\@attributes, "retain") ;
+	
+	my $atomic = !arrayRefContains(\@attributes, "nonatomic") ;
+	
+	my $ownerMethod ;
+	if ($retainNotCopy) {
+		$ownerMethod = "retain" ;
+	}
+	else {
+		$ownerMethod = "copy" ;
+	}
+	
+	my $indent = "\t" ;
+	if ($atomic) {
+		$indent .= "\t" ;
+	}
+	
+	my $m_ = "m_" ;
+	
+	my $getterCore ;
+	my $setterCore ;
+	if ($ownIt) {
+		if ($atomic) {
+			$getterCore = "$propertyName = [[m_$propertyName $ownerMethod] autorelease] ;" ;
+		}
+		else {
+			$getterCore = "$propertyName = m_$propertyName ;" ;
+		}
+		$setterCore = "if ($propertyName != $m_$propertyName) {\n\t$indent\[$m_$propertyName release\] ;\n\t$indent$m_$propertyName = [$propertyName $ownerMethod] ;\n$indent}" ;
+	}
+	else {
+		$getterCore = "$propertyName = $m_$propertyName ;" ;
+		$setterCore = "$m_$propertyName = $propertyName ;" ;
+	}
+	
+	my $synthesizer = &lt;&lt; "SYNTHESIZER" ;
+\@synthesize $propertyName = m_$propertyName ;
+
+SYNTHESIZER
+	
+	my $explicitAccessors ;
+	
+	if ($atomic) {
+	$explicitAccessors = &lt;&lt; "EXPLICIT_ACCESSORS" ;
+- ($typeName$star)$propertyName {
+	$typeName$star $propertyName ;
+	\@synchronized(self) {
+		$getterCore ;
+	}
+	return $propertyName ;
+}
+
+- (void)set$cappedPropertyName:($typeName$star)$propertyName {
+	\@synchronized(self) {
+		$setterCore
+	}
+}
+
+EXPLICIT_ACCESSORS
+	}
+	else {
+	$explicitAccessors = &lt;&lt; "ACCESSORS" ;
+- ($typeName$star)$propertyName {
+	$typeName$star $propertyName ;
+	$getterCore
+	return $propertyName ;
+}
+
+- (void)set$cappedPropertyName:($typeName$star)$propertyName {
+	$setterCore
+}
+
+ACCESSORS
+	}
+	
+	print $synthesizer . $explicitAccessors ;
+}
+
+=com
+	Pass an array reference followed by a target.  This
+	subroutine will return whether or not the target is
+	a member of the referenced array.
+=cut
+sub arrayRefContains {
+	my $arrayRef = shift ;
+	my $target = shift ;
+	my @array = @$arrayRef ;
+	my %test ;
+	$test{$target} = () ;
+	return grep{exists $test{$_}} @array ;
+}
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>0</integer>
+				<key>scriptOutput</key>
+				<integer>6</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>C0CCC095-5146-4B10-9F65-081787EC2C89</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>shell.python</string>
+				<key>name</key>
+				<string>Place Accessor Decls on Clipboard</string>
+				<key>script</key>
+				<string>#! /usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Known limitations:
+#   - Multiword types (like "unsigned int") are not handled.
+#   - The script attempts to determine if the type is an object or not, but it is imperfect at detecting this
+
+import sys
+import string
+import re
+
+# ================== Debug input ==================
+
+# Set the variable below to True to run the script in test mode on the test 
+# input below instead of reading input from stdin
+doDebug = False
+
+testInput = (
+"""    NSString *_name;  // comment
+""",
+"""    IBOutlet NSButton *button;  // comment
+""",
+"""    NSMutableArray *_children;  /* comment */
+""",
+"""   /* comment */
+""",
+"""   // comment
+""",
+"""    unsigned _count;
+""")
+
+# ================== Script data ==================
+
+# List of known scalar types (no ref-counting in accessors for these types)
+knownScalarTypes = ("int", "unsigned", "char", "short", "long", "float", "double", "NSRect", "NSPoint", "NSSize", "NSRange", "BOOL")
+
+# List of known to-many relationship types.  (Since the generated code assumes NSMutableArray, this list probably would not grow...)
+knownArrayTypes = ("NSMutableArray")
+
+# Templates for accessor methods
+# Substitutions will be performed on use:
+#    &lt;key&gt; -&gt; normal key name
+#    &lt;capKey&gt; -&gt; capitalized key name
+#    &lt;ivar&gt; -&gt; instance variable name
+#    &lt;type&gt; -&gt; key's type
+#
+
+objectAccessorDecls = """\
+- (&lt;type&gt;)&lt;key&gt;;
+- (void)set&lt;capKey&gt;:(&lt;type&gt;)value;
+
+"""
+
+objectAccessorDefs = """\
+- (&lt;type&gt;)&lt;key&gt; {
+    return [[&lt;ivar&gt; retain] autorelease];
+}
+
+- (void)set&lt;capKey&gt;:(&lt;type&gt;)value {
+    if (&lt;ivar&gt; != value) {
+        [&lt;ivar&gt; release];
+        &lt;ivar&gt; = [value copy];
+    }
+}
+
+"""
+
+scalarAccessorDecls = """\
+- (&lt;type&gt;)&lt;key&gt;;
+- (void)set&lt;capKey&gt;:(&lt;type&gt;)value;
+
+"""
+
+scalarAccessorDefs = """\
+- (&lt;type&gt;)&lt;key&gt; {
+    return &lt;ivar&gt;;
+}
+
+- (void)set&lt;capKey&gt;:(&lt;type&gt;)value {
+    if (&lt;ivar&gt; != value) {
+        &lt;ivar&gt; = value;
+    }
+}
+
+"""
+
+indexedAccessorDecls = """\
+- (NSArray *)&lt;key&gt;;
+- (unsigned)countOf&lt;capKey&gt;;
+- (id)objectIn&lt;capKey&gt;AtIndex:(unsigned)theIndex;
+- (void)get&lt;capKey&gt;:(id *)objsPtr range:(NSRange)range;
+- (void)insertObject:(id)obj in&lt;capKey&gt;AtIndex:(unsigned)theIndex;
+- (void)removeObjectFrom&lt;capKey&gt;AtIndex:(unsigned)theIndex;
+- (void)replaceObjectIn&lt;capKey&gt;AtIndex:(unsigned)theIndex withObject:(id)obj;
+
+"""
+
+indexedAccessorDefs = """\
+- (NSArray *)&lt;key&gt; {
+    if (!&lt;ivar&gt;) {
+        &lt;ivar&gt; = [[NSMutableArray alloc] init];
+    }
+    return [[&lt;ivar&gt; retain] autorelease];
+}
+
+- (unsigned)countOf&lt;capKey&gt; {
+    if (!&lt;ivar&gt;) {
+        &lt;ivar&gt; = [[NSMutableArray alloc] init];
+    }
+    return [&lt;ivar&gt; count];
+}
+
+- (id)objectIn&lt;capKey&gt;AtIndex:(unsigned)theIndex {
+    if (!&lt;ivar&gt;) {
+        &lt;ivar&gt; = [[NSMutableArray alloc] init];
+    }
+    return [&lt;ivar&gt; objectAtIndex:theIndex];
+}
+
+- (void)get&lt;capKey&gt;:(id *)objsPtr range:(NSRange)range {
+    if (!&lt;ivar&gt;) {
+        &lt;ivar&gt; = [[NSMutableArray alloc] init];
+    }
+    [&lt;ivar&gt; getObjects:objsPtr range:range];
+}
+
+- (void)insertObject:(id)obj in&lt;capKey&gt;AtIndex:(unsigned)theIndex {
+    if (!&lt;ivar&gt;) {
+        &lt;ivar&gt; = [[NSMutableArray alloc] init];
+    }
+    [&lt;ivar&gt; insertObject:obj atIndex:theIndex];
+}
+
+- (void)removeObjectFrom&lt;capKey&gt;AtIndex:(unsigned)theIndex {
+    if (!&lt;ivar&gt;) {
+        &lt;ivar&gt; = [[NSMutableArray alloc] init];
+    }
+    [&lt;ivar&gt; removeObjectAtIndex:theIndex];
+}
+
+- (void)replaceObjectIn&lt;capKey&gt;AtIndex:(unsigned)theIndex withObject:(id)obj {
+    if (!&lt;ivar&gt;) {
+        &lt;ivar&gt; = [[NSMutableArray alloc] init];
+    }
+    [&lt;ivar&gt; replaceObjectAtIndex:theIndex withObject:obj];
+}
+
+
+"""
+
+# ================== Runtime variables ==================
+
+# ================== Script ==================
+
+# Get input lines
+if doDebug:
+    inputLines = testInput
+else:
+    inputLines = sys.stdin.readlines()
+
+# Strip comments and extra whitespace
+commentRE1 = re.compile(r"[ 	]*\/\/.*$")
+commentRE2 = re.compile(r"[ 	]*\/\*.*\*\/[ 	]*")
+
+newInputLines = []
+for curLine in inputLines:
+    curLine = re.sub(commentRE1, "", curLine)
+    curLine = re.sub(commentRE2, "", curLine)
+    curLine = curLine.strip()
+    if curLine != "":
+        newInputLines.append(curLine)
+
+inputLines = newInputLines
+
+# Process each line
+
+# Subexpressions:
+#     1 - IBOutlet decl
+#     2 - Type name (without pointer *'s)
+#     3 - Pointer *'s from type
+#     4 - Leading underbar(s) of variable name
+#     5 - First letter of variable name
+#     6 - Rest of variable name
+declRE = re.compile(r"^(IBOutlet)?[ 	]*([_a-zA-Z][_a-zA-Z0-9]*)[ 	]*(\**)[ 	]*([_]*)([a-zA-Z])([_a-zA-Z0-9]*)[ 	]*;")
+
+typeRE = re.compile(r"&lt;type&gt;", re.MULTILINE)
+keyRE = re.compile(r"&lt;key&gt;", re.MULTILINE)
+capKeyRE = re.compile(r"&lt;capKey&gt;", re.MULTILINE)
+ivarRE = re.compile(r"&lt;ivar&gt;", re.MULTILINE)
+
+resultText = ""
+
+for curLine in inputLines:
+    # Match the line and extract the subexpressions
+    matchObj = re.match(declRE, curLine)
+    if matchObj != None:
+        # Note indices are 1 less than subexpression numbers in the comment above
+        subexps = matchObj.groups()
+        
+        isObject = True
+        isArray = False
+        if subexps[1] in knownScalarTypes:
+            isObject = False
+        elif subexps[1] in knownArrayTypes:
+            isArray = True
+        
+        # Figure out the substitution strings for the accessor templates
+        if subexps[2] != "":
+            curType = subexps[1] + " " + subexps[2]
+        else:
+            curType = subexps[1]
+        curKey = subexps[4] + subexps[5]
+        curCapKey = string.upper(subexps[4]) + subexps[5]
+        curIvar = subexps[3] + subexps[4] + subexps[5]
+        
+        # Build the result
+        if isObject:
+            if isArray:
+                curResultText = indexedAccessorDecls
+            else:
+                curResultText = objectAccessorDecls
+        else:
+            curResultText = scalarAccessorDecls
+
+        curResultText = re.sub(typeRE, curType, curResultText)
+        curResultText = re.sub(keyRE, curKey, curResultText)
+        curResultText = re.sub(capKeyRE, curCapKey, curResultText)
+        curResultText = re.sub(ivarRE, curIvar, curResultText)
+        
+        resultText += curResultText
+
+
+# The comma suppresses adding another newline to the end
+print resultText,
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>6</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>68D60653-A91C-4C27-A786-56C22403AE37</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>shell.python</string>
+				<key>name</key>
+				<string>Place Accessor Defs on Clipboard</string>
+				<key>script</key>
+				<string>#! /usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Known limitations:
+#   - Multiword types (like "unsigned int") are not handled.
+#   - The script attempts to determine if the type is an object or not, but it is imperfect at detecting this
+
+import sys
+import string
+import re
+
+# ================== Debug input ==================
+
+# Set the variable below to True to run the script in test mode on the test 
+# input below instead of reading input from stdin
+doDebug = False
+
+testInput = (
+"""    NSString *_name;  // comment
+""",
+"""    IBOutlet NSButton *button;  // comment
+""",
+"""    NSMutableArray *_children;  /* comment */
+""",
+"""   /* comment */
+""",
+"""   // comment
+""",
+"""    unsigned _count;
+""")
+
+# ================== Script data ==================
+
+# List of known scalar types (no ref-counting in accessors for these types)
+knownScalarTypes = ("int", "unsigned", "char", "short", "long", "float", "double", "NSRect", "NSPoint", "NSSize", "NSRange", "BOOL")
+
+# List of known to-many relationship types.  (Since the generated code assumes NSMutableArray, this list probably would not grow...)
+knownArrayTypes = ("NSMutableArray")
+
+# Templates for accessor methods
+# Substitutions will be performed on use:
+#    &lt;key&gt; -&gt; normal key name
+#    &lt;capKey&gt; -&gt; capitalized key name
+#    &lt;ivar&gt; -&gt; instance variable name
+#    &lt;type&gt; -&gt; key's type
+#
+
+objectAccessorDecls = """\
+- (&lt;type&gt;)&lt;key&gt;;
+- (void)set&lt;capKey&gt;:(&lt;type&gt;)value;
+
+"""
+
+objectAccessorDefs = """\
+- (&lt;type&gt;)&lt;key&gt; {
+    return [[&lt;ivar&gt; retain] autorelease];
+}
+
+- (void)set&lt;capKey&gt;:(&lt;type&gt;)value {
+    if (&lt;ivar&gt; != value) {
+        [&lt;ivar&gt; release];
+        &lt;ivar&gt; = [value copy];
+    }
+}
+
+"""
+
+scalarAccessorDecls = """\
+- (&lt;type&gt;)&lt;key&gt;;
+- (void)set&lt;capKey&gt;:(&lt;type&gt;)value;
+
+"""
+
+scalarAccessorDefs = """\
+- (&lt;type&gt;)&lt;key&gt; {
+    return &lt;ivar&gt;;
+}
+
+- (void)set&lt;capKey&gt;:(&lt;type&gt;)value {
+    if (&lt;ivar&gt; != value) {
+        &lt;ivar&gt; = value;
+    }
+}
+
+"""
+
+indexedAccessorDecls = """\
+- (NSArray *)&lt;key&gt;;
+- (unsigned)countOf&lt;capKey&gt;;
+- (id)objectIn&lt;capKey&gt;AtIndex:(unsigned)theIndex;
+- (void)get&lt;capKey&gt;:(id *)objsPtr range:(NSRange)range;
+- (void)insertObject:(id)obj in&lt;capKey&gt;AtIndex:(unsigned)theIndex;
+- (void)removeObjectFrom&lt;capKey&gt;AtIndex:(unsigned)theIndex;
+- (void)replaceObjectIn&lt;capKey&gt;AtIndex:(unsigned)theIndex withObject:(id)obj;
+
+"""
+
+indexedAccessorDefs = """\
+- (NSArray *)&lt;key&gt; {
+    if (!&lt;ivar&gt;) {
+        &lt;ivar&gt; = [[NSMutableArray alloc] init];
+    }
+    return [[&lt;ivar&gt; retain] autorelease];
+}
+
+- (unsigned)countOf&lt;capKey&gt; {
+    if (!&lt;ivar&gt;) {
+        &lt;ivar&gt; = [[NSMutableArray alloc] init];
+    }
+    return [&lt;ivar&gt; count];
+}
+
+- (id)objectIn&lt;capKey&gt;AtIndex:(unsigned)theIndex {
+    if (!&lt;ivar&gt;) {
+        &lt;ivar&gt; = [[NSMutableArray alloc] init];
+    }
+    return [&lt;ivar&gt; objectAtIndex:theIndex];
+}
+
+- (void)get&lt;capKey&gt;:(id *)objsPtr range:(NSRange)range {
+    if (!&lt;ivar&gt;) {
+        &lt;ivar&gt; = [[NSMutableArray alloc] init];
+    }
+    [&lt;ivar&gt; getObjects:objsPtr range:range];
+}
+
+- (void)insertObject:(id)obj in&lt;capKey&gt;AtIndex:(unsigned)theIndex {
+    if (!&lt;ivar&gt;) {
+        &lt;ivar&gt; = [[NSMutableArray alloc] init];
+    }
+    [&lt;ivar&gt; insertObject:obj atIndex:theIndex];
+}
+
+- (void)removeObjectFrom&lt;capKey&gt;AtIndex:(unsigned)theIndex {
+    if (!&lt;ivar&gt;) {
+        &lt;ivar&gt; = [[NSMutableArray alloc] init];
+    }
+    [&lt;ivar&gt; removeObjectAtIndex:theIndex];
+}
+
+- (void)replaceObjectIn&lt;capKey&gt;AtIndex:(unsigned)theIndex withObject:(id)obj {
+    if (!&lt;ivar&gt;) {
+        &lt;ivar&gt; = [[NSMutableArray alloc] init];
+    }
+    [&lt;ivar&gt; replaceObjectAtIndex:theIndex withObject:obj];
+}
+
+
+"""
+
+# ================== Runtime variables ==================
+
+# ================== Script ==================
+
+# Get input lines
+if doDebug:
+    inputLines = testInput
+else:
+    inputLines = sys.stdin.readlines()
+
+# Strip comments and extra whitespace
+commentRE1 = re.compile(r"[ 	]*\/\/.*$")
+commentRE2 = re.compile(r"[ 	]*\/\*.*\*\/[ 	]*")
+
+newInputLines = []
+for curLine in inputLines:
+    curLine = re.sub(commentRE1, "", curLine)
+    curLine = re.sub(commentRE2, "", curLine)
+    curLine = curLine.strip()
+    if curLine != "":
+        newInputLines.append(curLine)
+
+inputLines = newInputLines
+
+# Process each line
+
+# Subexpressions:
+#     1 - IBOutlet decl
+#     2 - Type name (without pointer *'s)
+#     3 - Pointer *'s from type
+#     4 - Leading underbar(s) of variable name
+#     5 - First letter of variable name
+#     6 - Rest of variable name
+declRE = re.compile(r"^(IBOutlet)?[ 	]*([_a-zA-Z][_a-zA-Z0-9]*)[ 	]*(\**)[ 	]*([_]*)([a-zA-Z])([_a-zA-Z0-9]*)[ 	]*;")
+
+typeRE = re.compile(r"&lt;type&gt;", re.MULTILINE)
+keyRE = re.compile(r"&lt;key&gt;", re.MULTILINE)
+capKeyRE = re.compile(r"&lt;capKey&gt;", re.MULTILINE)
+ivarRE = re.compile(r"&lt;ivar&gt;", re.MULTILINE)
+
+resultText = ""
+
+for curLine in inputLines:
+    # Match the line and extract the subexpressions
+    matchObj = re.match(declRE, curLine)
+    if matchObj != None:
+        # Note indices are 1 less than subexpression numbers in the comment above
+        subexps = matchObj.groups()
+        
+        isObject = True
+        isArray = False
+        if subexps[1] in knownScalarTypes:
+            isObject = False
+        elif subexps[1] in knownArrayTypes:
+            isArray = True
+        
+        # Figure out the substitution strings for the accessor templates
+        if subexps[2] != "":
+            curType = subexps[1] + " " + subexps[2]
+        else:
+            curType = subexps[1]
+        curKey = subexps[4] + subexps[5]
+        curCapKey = string.upper(subexps[4]) + subexps[5]
+        curIvar = subexps[3] + subexps[4] + subexps[5]
+        
+        # Build the result
+        if isObject:
+            if isArray:
+                curResultText = indexedAccessorDefs
+            else:
+                curResultText = objectAccessorDefs
+        else:
+            curResultText = scalarAccessorDefs
+
+        curResultText = re.sub(typeRE, curType, curResultText)
+        curResultText = re.sub(keyRE, curKey, curResultText)
+        curResultText = re.sub(capKeyRE, curCapKey, curResultText)
+        curResultText = re.sub(ivarRE, curIvar, curResultText)
+        
+        resultText += curResultText
+
+
+# The comma suppresses adding another newline to the end
+print resultText,
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>6</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>5A5FD548-E00A-4A01-95BA-E4A0653D152D</string>
+			</dict>
+		</array>
+		<key>uuid</key>
+		<string>BFBF1DA4-050C-4418-963D-3B796890CB8F</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScriptGroup</string>
+		<key>name</key>
+		<string>Text</string>
+		<key>subNodes</key>
+		<array>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Sort Selection</string>
+				<key>script</key>
+				<string>#! /bin/sh
+#
+# Alphabetically sorts the lines of the selection
+
+echo -n "%%%{PBXSelection}%%%"
+sort &lt;&amp;0
+echo -n "%%%{PBXSelection}%%%"</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>1</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>16F0853F-D545-49A2-83F0-55873F355202</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Remove Duplicate Lines</string>
+				<key>script</key>
+				<string>#! /bin/sh
+#
+# Alphabetically sorts the lines of the selection
+
+echo -n "%%%{PBXSelection}%%%"
+uniq &lt;&amp;0
+echo -n "%%%{PBXSelection}%%%"</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>1</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>2F004890-19F9-473B-978A-E3FF856CD17F</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Remove Non-Printing Characters</string>
+				<key>script</key>
+				<string>#! /bin/sh
+#
+# Removes any non-printing characters from the selection
+#
+# WARNING - this does not try to be smart about encodings. If you're not using ASCII, you may be!
+
+echo -n "%%%{PBXSelection}%%%"
+tr -cd "[:print:]\t\n\r" &lt;&amp;0
+echo -n "%%%{PBXSelection}%%%"</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>1</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>E4313F08-F228-4078-80E5-7C72213BD22E</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Convert Non-Breaking Spaces</string>
+				<key>script</key>
+				<string>#! /bin/sh
+#
+# Converts occurrences of opt-space to space
+
+echo -n "%%%{PBXSelection}%%%"
+sed 's/ / /g' &lt;&amp;0
+echo -n "%%%{PBXSelection}%%%"</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>1</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>033140A8-F305-4FAA-9A63-9143AEF9468C</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScriptSeparator</string>
+				<key>uuid</key>
+				<string>0E32FB13-B4F5-4AC9-9A96-33069D2539E2</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Evaluate Expression</string>
+				<key>script</key>
+				<string>#! /bin/sh
+#
+# Evaluate the given mathematical expression using 'bc'
+
+echo -n "%%%{PBXSelection}%%%"
+echo -n `( echo 'scale = 3;' ; cat ; echo ) | bc` &lt;&amp;0
+echo -n "%%%{PBXSelection}%%%"
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>1</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>63F6DC00-90C7-4190-B628-86EF5708C805</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScriptSeparator</string>
+				<key>uuid</key>
+				<string>5C7D66D3-32D4-4D0E-8015-A0AF42C892B4</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Convert Spaces to Tabs</string>
+				<key>script</key>
+				<string>#! /bin/sh
+
+# Convert spaces to tabs in the selected text
+
+# use AppleScript to get the current view's tab width
+TABWIDTH=`osascript &lt;&lt; ENDOFSCRIPT
+tell application "Xcode"
+	set tabWidth to 4
+	set myFile to associated file name of front window
+	set textDocuments to text documents
+	repeat with i in textDocuments
+		if path of i is myFile then
+			set tabWidth to call method "tabWidth" of i
+		end if
+	end repeat
+	tabWidth
+end tell
+ENDOFSCRIPT
+`
+
+echo -n "%%%{PBXSelection}%%%"
+unexpand -t ${TABWIDTH} &lt;&amp;0
+echo -n "%%%{PBXSelection}%%%"
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>1</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>792533F0-D98D-44DB-A07D-314BC8B88053</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Convert Tabs to Spaces</string>
+				<key>script</key>
+				<string>#! /bin/sh
+
+# Convert tabs to spaces in the selected text
+
+# use AppleScript to get the current view's tab width
+TABWIDTH=`osascript &lt;&lt; ENDOFSCRIPT
+tell application "Xcode"
+	set tabWidth to 4
+	set myFile to associated file name of front window
+	set textDocuments to text documents
+	repeat with i in textDocuments
+		if path of i is myFile then
+			set tabWidth to call method "tabWidth" of i
+		end if
+	end repeat
+	tabWidth
+end tell
+ENDOFSCRIPT
+`
+
+echo -n "%%%{PBXSelection}%%%"
+expand -t ${TABWIDTH} &lt;&amp;0
+echo -n "%%%{PBXSelection}%%%"
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>1</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>FDAE2754-E25B-40E4-973D-9EB272CF7DB2</string>
+			</dict>
+		</array>
+		<key>uuid</key>
+		<string>F32BDD54-D704-4BCD-9E59-F51D5203E345</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScriptGroup</string>
+		<key>name</key>
+		<string>Strings File</string>
+		<key>subNodes</key>
+		<array>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Check Localizable.strings in SSYLocalize</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+plutil /Users/jk/Documents/Programming/Projects/SSYLocalize/Localizations/lproj/English.lproj/Localizable.strings</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>0</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>8DE1DA8E-5A1C-47CA-9A9C-A18070818B16</string>
+			</dict>
+		</array>
+		<key>uuid</key>
+		<string>C52AC94F-8423-49D0-8372-8FE3A7D25BE0</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScriptGroup</string>
+		<key>name</key>
+		<string>Doxygen</string>
+		<key>subNodes</key>
+		<array>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Gen &amp; Load - Curr Proj</string>
+				<key>script</key>
+				<string>#!/bin/sh###  This script builds doxygen documentation for the active project and loads this docset into Xcode.  It is an adaptation of the script found at http://developer.apple.com/tools/creatingdocsetswithdoxygen.html except, that it works in User Scripts instead of in a Run Shell Script Build Phase.  The idea is that you can update your documentation at any time.  This is geared toward people who appreciate the increased quality they get by writing documentation, primarily for themselves, before writing implementation code.  Xcode 3.1's documentation browser seems to load documentation revisions produced by this script immediately, although it will not refresh a page currently being viewed until you click to another page or two and then click back.
+
+# Besides being installed in your ~/Library/Developer/Shared/Documentation/DocSets for Xcode, a copy of the completed docset package will also be placed in your project folder -- that is, Build Setting SRCROOT.# Limitations: Unfortunately, producing documentation can take several tens of seconds, and no progress is shown during the process.  Therefore, I recommend installing this script with Output: Open in New Document and Errors: Merge with Script Output so that at least you'll be able to see when it is done.
+
+###  Customize some variables.  Since these user-level settings, it does not make sense to read them out of either Target Settings or even Project Settings.  So I just hard-code them here:#  All of the documentation you produce for any project will appear bundled under your COMPANY_NAME in Xcode's documentation browser:
+COMPANY_NAME="Sheep Systems"COMPANY_IDENTIFIER="com.sheepsystems"#  Script needs to know where to find your doxygen tool:
+DOXYGEN_PATH="/Applications/Doxygen.app/Contents/Resources/doxygen"###  End of customized variables#  We'll need a couple of build settings.  Unfortunately these are not available in the User Scripts environment, so we kludge it:  Call out to AppleScript and then call back into Xcode.SOURCE_ROOT=`osascript -e "tell application \"Xcode\" to return value of flattened build setting \"SRCROOT\" of build configuration \"Release\" of active target of (project of active project document)"`# Note that "OBJROOT" is the symbolic name for Build Locations &gt; Intermediate Build Files Path.  In other words, I'm putting my Doxygen junk in the same place where Xcode puts its junk.TEMP_DIR=`osascript -e "tell application \"Xcode\" to return value of flattened build setting \"OBJROOT\" of build configuration \"Release\" of active target of item 1 of projects"`PROJECT_NAME=`osascript -e "tell application \"Xcode\" to return name of project of active project document"`#  We're going to create a temporary configuration file for Doxygen to use.  We'll need a path.CONFIG_PATH="$TEMP_DIR/doxygen.config"#  Remove old configuration file, in case there already is one.rm -f "$CONFIG_PATH"#  Run Doxygen to create the default configuration file."$DOXYGEN_PATH" -g "$CONFIG_PATH"#  Append our settings to the default configuration file which is now at $CONFIG_PATH.  Note that in the case of GENERATE_DOCSET, DOCSET_FEEDNAME and DOCSET_BUNDLE_ID, the default configuration file set has already set non-empty values for these (which are not the values we want) earlier in the file.  Apparently, because this works, when Doxygen reads these later settings, it overwrites the incorrect default values with our values:echo "#---------------------------------------------------------------------------" &gt;&gt; "$CONFIG_PATH"echo "# Configuration additions by the Xcode User Script" &gt;&gt; "$CONFIG_PATH"echo "#---------------------------------------------------------------------------" &gt;&gt; "$CONFIG_PATH"echo "INPUT             = $SOURCE_ROOT" &gt;&gt; "$CONFIG_PATH"echo "OUTPUT_DIRECTORY  = $SOURCE_ROOT/DoxygenDocs.docset" &gt;&gt; "$CONFIG_PATH"echo "GENERATE_DOCSET   = YES" &gt;&gt; "$CONFIG_PATH"echo "DOCSET_FEEDNAME   = \"$COMPANY_NAME\"" &gt;&gt; "$CONFIG_PATH"echo "DOCSET_BUNDLE_ID  = $COMPANY_IDENTIFIER.$PROJECT_NAME" &gt;&gt; "$CONFIG_PATH"echo "PROJECT_NAME      = $PROJECT_NAME" &gt;&gt; "$CONFIG_PATH"
+# I like to see things alphabetized, so...
+echo "SORT_BRIEF_DOCS   = YES" &gt;&gt; "$CONFIG_PATH"
+echo "RECURSIVE         = YES" &gt;&gt; "$CONFIG_PATH"#  Run doxygen to generate documentation based on the updated config file.#  Note: doxygen creates a Makefile that does most of the heavy lifting."$DOXYGEN_PATH" "$CONFIG_PATH"#  make will invoke docsetutil. Take a look at the Makefile to see how this is done.  Apparently, it installs the new docset into /Users/$USER/Library/Developer/Shared/Documentation/DocSetsmake -C "$SOURCE_ROOT/DoxygenDocs.docset/html" install#  Construct a temporary applescript file to tell Xcode to load the new docset.LOAD_DOCSET_PATH="$TEMP_DIR/loadDocSet.scpt"#  Remove old applescript file, in case there already is one.rm -f "$LOAD_DOCSET_PATH"#  Echo three lines of text into the file
+echo "tell application \"Xcode\"" &gt;&gt; "$LOAD_DOCSET_PATH"echo "load documentation set with path \"/Users/$USER/Library/Developer/Shared/Documentation/DocSets/\""      &gt;&gt; "$LOAD_DOCSET_PATH"echo "end tell" &gt;&gt; "$LOAD_DOCSET_PATH"#  Run the load-docset applescript command.osascript "$LOAD_DOCSET_PATH"echoecho "*** This script is now done."echoexit 0</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>7</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>AF0472E2-5670-4E2D-910C-B44E6B644837</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Gen &amp; Load - SSY Common</string>
+				<key>script</key>
+				<string>#!/bin/sh###  This script builds doxygen documentation for the active project and loads this docset into Xcode. ####  We'll need a couple of build settings.  Unfortunately these are not available in the User Scripts environment, so we kludge it:  Call out to AppleScript and then call back into Xcode.echoecho "*** Setting environment variables."echo# Note that "OBJROOT" is the symbolic name for Build Locations &gt; Intermediate Build Files Path.  In other words, I'm telling Doxygen to use the same intermediate/temp directory as Xcode does -- Put all the junk in one place.TEMP_DIR=`osascript -e "tell application \"Xcode\" to return value of flattened build setting \"OBJROOT\" of build configuration \"Release\" of active target of item 1 of projects"`DOXYGEN_PATH="/Applications/Doxygen.app/Contents/Resources/doxygen"#  Run doxygen on the config file.#  Note: doxygen creates a Makefile that does most of the heavy lifting.echoecho "*** Running doxygen to create documentation."echoCONFIG_PATH="/Users/jk/Documents/Programming/Scripts/SSYCommon.doxygen.config"$DOXYGEN_PATH "$CONFIG_PATH"#  make will invoke docsetutil. Take a look at the Makefile to see how this is done.#  The path give in this line must match the OUTPUT_DIRECTORY/HTML_OUTPUT given in the configuration file
+
+make -C /Users/jk/Documents/Programming/SSYCommon.docset/html installechoecho "*** Done creating docset, will tell Xcode to load it now."echo#  Construct a temporary applescript file to tell Xcode to load a docset.#  Remove old script, in case there already is one.rm -f $TEMP_DIR/loadDocSet.scptecho "tell application \"Xcode\"" &gt;&gt; $TEMP_DIR/loadDocSet.scptecho "load documentation set with path \"/Users/$USER/Library/Developer/Shared/Documentation/DocSets/\""      &gt;&gt; $TEMP_DIR/loadDocSet.scptecho "end tell" &gt;&gt; $TEMP_DIR/loadDocSet.scpt#  Run the load-docset applescript command.osascript $TEMP_DIR/loadDocSet.scptecho "AppleScript telling Xcode to load the new docset is in:"echo "   "$TEMP_DIR/loadDocSet.scptechoecho "*** This script is now done."echoexit 0</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>7</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>F078EA2E-0924-4BE3-A7C7-B53906845A11</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string>^@q</string>
+				<key>language</key>
+				<string>shell.perl</string>
+				<key>name</key>
+				<string>Insert Doxygen template</string>
+				<key>script</key>
+				<string>#! /usr/bin/perl -w
+# 
+# Inserts a template HeaderDoc comment for an
+# Objective-C method.
+# If the user selects a method declaration and
+# chooses this command, the template includes
+# the method name and the names of each parameter.
+# If the user doesn't select a declaration before issuing
+# this command, a default template is inserted.
+
+use strict;
+
+my $selection = &lt;&lt;'SELECTION';
+%%%{PBXSelectedText}%%%
+SELECTION
+chomp $selection;
+my $unmodifiedSelection = $selection; # used to retain linebreaks in output
+
+$selection =~ s/\n/ /sg;     # put on one line, if necessary
+$selection =~ s/\s+$//;      # remove any trailing spaces
+$selection =~ s/\s{2,}/ /g;  # regularize remaining spaces
+
+my $displayMethodName= '';
+my $returnsAValue= 0;
+my @params = ();
+my $return = '' ;
+
+# is it a method declaration that we understand?
+if (length($selection) &amp;&amp; ($selection =~ /^[+-]/) &amp;&amp; ($selection =~ /;$/)) {
+    # determine if it returns a value
+    $selection =~ m/[+-]\s+(\((.*?)\))?(.*);/;
+	$return = $2;
+	my $fullMethodName = $3;
+	if ((defined($return)) &amp;&amp; ($return ne 'void')) {$returnsAValue=1;};
+	
+	if (defined($fullMethodName)) {
+	    # get rid of type info for args
+	    $fullMethodName =~ s/\(.*?\)//g;
+	    
+		if ($fullMethodName =~ /:/) {
+			# get keyword:arg pairs
+			my @keyArgPairs = split(/\s+/, $fullMethodName);
+			
+			foreach my $pair (@keyArgPairs) {
+				if ($pair =~ /:/) { # don't treat parameters with spaces as method names
+				    my @parts = split(/:/, $pair);
+				    while (@parts) {
+					    $displayMethodName .= shift(@parts).":";
+					    push (@params, shift @parts);
+				    }
+				} else {
+				    if (length($pair)) { # but do add them to the parameter list
+					push (@params, $pair);
+				    }
+				}
+			}
+		} else {
+			$displayMethodName = $fullMethodName;
+		}
+	}
+}
+
+print "/*!\n";
+print " \@brief    \n\n";
+print " \@details  \n" ;
+
+my $aec = 0 ; # "Apple error convention in use"
+foreach my $param (@params) {
+	if (($param eq "error") || ($param eq "error_p")) {
+		$aec = 1 ;
+		print " \@param    error_p  If not NULL and if an error occurs, upon return,\n" ;
+		print "           will point to an error object encapsulating the error.\n" ;
+	}
+	else { 
+		print " \@param    $param  \n" if (defined($param));
+	}
+}
+
+$aec = $aec &amp;&amp; (($return eq "BOOL") || ($return eq "bool")) ;
+if ($returnsAValue) {
+	if ($aec) {
+		print " \@result   YES if the method completed successfully, otherwise NO\n" ;
+	}
+	else {
+		print " \@result   \n" ;
+	}
+}
+print "*/\n";
+print $unmodifiedSelection;
+
+exit 0;</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>1</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>A301DDBF-6E6A-49C4-95D4-117CD007EB72</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>shell.perl</string>
+				<key>name</key>
+				<string>Insert @enum template</string>
+				<key>script</key>
+				<string>#! /usr/bin/perl -w
+# Insert HeaderDoc template for functions, types, enums, etc.
+# 
+# insertTypeCmt.pl - inserts a template HeaderDoc comment for a class/protocol/category.
+use strict;
+
+print "/*!\n    \@enum \n";
+print "    \@abstract   %%%{PBXSelection}%%%&lt;#(description)#&gt;%%%{PBXSelection}%%%\n";
+print "    \@discussion &lt;#(description)#&gt;\n";
+print "    \@constant   &lt;#(name) (description)#&gt;\n";
+print "*/\n";
+
+exit 0;</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>4</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>64F7FCC0-1A01-450C-B2A2-EAA1C959C305</string>
+			</dict>
+		</array>
+		<key>uuid</key>
+		<string>78C8B197-B2F4-4963-A252-FBCBE125E732</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScriptGroup</string>
+		<key>name</key>
+		<string>Property Lists</string>
+		<key>subNodes</key>
+		<array>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Parse File as Property List</string>
+				<key>script</key>
+				<string>#!/usr/bin/perl -w
+#
+# Uses plutil to verify that the current file is a valid plist
+
+use FileHandle;
+use File::Temp ("mkdtemp");
+use File::Copy ("copy");
+use File::Basename ("basename");
+use Cwd ("chdir");
+
+my $filename = basename("%%%{PBXFilePath}%%%");
+my $temporary_directory = mkdtemp("/tmp/plistparseXXXX");
+
+open(OUTFILE, "&gt; $temporary_directory/$filename") or die "Unable to create temporary file: $!";
+print OUTFILE while(&lt;STDIN&gt;);
+close(OUTFILE);
+
+chdir("$temporary_directory");
+
+my $output = `plutil -lint "$filename"`;
+unlink "$temporary_directory/$filename";
+rmdir "$temporary_directory";
+print "$output";</string>
+				<key>scriptError</key>
+				<integer>0</integer>
+				<key>scriptInput</key>
+				<integer>2</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>1AFADB89-4F7A-4EC2-A7C1-8D6F53EF01CF</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Parse Selection as Property List</string>
+				<key>script</key>
+				<string>#!/usr/bin/perl -w
+#
+# Uses plutil to verify that the current file is a valid plist
+
+use FileHandle;
+use File::Temp ("mkdtemp");
+use File::Copy ("copy");
+use File::Basename ("basename");
+use Cwd ("chdir");
+
+my $filename = basename("%%%{PBXFilePath}%%%");
+my $temporary_directory = mkdtemp("/tmp/plistparseXXXX");
+
+open(OUTFILE, "&gt; $temporary_directory/$filename") or die "Unable to create temporary file: $!";
+print OUTFILE while(&lt;STDIN&gt;);
+close(OUTFILE);
+
+chdir("$temporary_directory");
+
+my $output = `plutil -lint "$filename"`;
+unlink "$temporary_directory/$filename";
+rmdir "$temporary_directory";
+print "$output";</string>
+				<key>scriptError</key>
+				<integer>0</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>E4EED4E0-6A21-4BF7-8A67-4FA36E48581D</string>
+			</dict>
+		</array>
+		<key>uuid</key>
+		<string>114FF8DD-E900-42F9-B2E2-C79A8EF9931D</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScriptGroup</string>
+		<key>name</key>
+		<string>Debug Logging</string>
+		<key>subNodes</key>
+		<array>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string>@d</string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Add /*DB?Line*/ log at Cursor</string>
+				<key>script</key>
+				<string>#! /usr/bin/perl -w
+#
+# -- PB User Script Info --
+# This stuff was used in Xcode 2.0 but is ignored by Xcode 3.0.
+# %%%{PBXName=Add Debug NSLog At Cursor}%%%
+# %%%{PBXInput=None}%%%
+# %%%{PBXOutput=InsertAfterSelection}%%%
+# %%%{PBXKeyEquivalent=@~d}%%%
+#
+my $logLine = "/*DB?Line*/ NSLog(@\"%%%{PBXSelectionStart}%%%: \") ;\n";
+
+print $logLine;
+</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>4</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>8AFD6BA0-4D6A-4B4B-B72C-636D60472D97</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string>~@d</string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Add /*DB?Line*/ with _PRETTY_FUNCTION_ at Cursor</string>
+				<key>script</key>
+				<string>#! /usr/bin/perl -w
+#
+# -- PB User Script Info --
+# This stuff was used in Xcode 2.0 but is ignored by Xcode 3.0.
+# %%%{PBXName=Add Debug NSLog At Cursor}%%%
+# %%%{PBXInput=None}%%%
+# %%%{PBXOutput=InsertAfterSelection}%%%
+# %%%{PBXKeyEquivalent=@~d}%%%
+#
+my $logLine = "/*DB?Line*/ NSLog(@\"%%%{PBXSelectionStart}%%% %s\", __PRETTY_FUNCTION__) ;\n" ;
+print $logLine;
+</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>4</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>4B664959-4C99-4E3D-A08B-CBF0871978E9</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string>~$@D</string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Remove All /*DB?Line*/ in File</string>
+				<key>script</key>
+				<string>#! /usr/bin/perl -w
+
+my @pseudoline = &lt;STDIN&gt; ; # read the file from standard input
+
+# Note that I call these pseudolines because, in fact, Xcode often concatenates several lines together, I believe, if they are at the same indentation level. Maybe they used \r instead of \n to do this?  I don't understand it.
+
+# In an earlier version of this script, I used a simpler algorithm which was to omit from outputString any line which contained "DebugLog".  But that sometimes caused neighboring lines to be omitted too, because of this pseudolines thing.
+
+# So now, I instead concatenate the whole thing into one long string, and then 'split' them into lines myself, on either \n OR \r, and then only print lines not containing the debug-marker string as detected by the m// operator.
+
+
+my $outputString = "" ;
+
+foreach my $line (@pseudoline) {
+	$outputString .= $line ;
+}
+
+my @lines = split(/[\n\r]/, $outputString) ;
+
+my $i = 0 ;
+foreach my $aLine (@lines) {
+	if ($aLine !~ (m/DB\?Line/)) {
+		if ($i &gt; 0) {
+			print "\n" ;
+		}
+		print "$aLine" ;
+		$i++
+	}
+}
+</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>2</integer>
+				<key>scriptOutput</key>
+				<integer>2</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>8FD29393-4392-44D1-84F6-E255E49D4A54</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScriptSeparator</string>
+				<key>uuid</key>
+				<string>D9F27B76-CF5B-4CC6-B8BC-9C9CF7E876E3</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string>^d</string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Add SSYTrace at Cursor</string>
+				<key>script</key>
+				<string>#! /usr/bin/perl -w
+#
+# -- PB User Script Info --
+# This stuff was used in Xcode 2.0 but is ignored by Xcode 3.0.
+# %%%{PBXName=Add Debug NSLog At Cursor}%%%
+# %%%{PBXInput=None}%%%
+# %%%{PBXOutput=InsertAfterSelection}%%%
+# %%%{PBXKeyEquivalent=@~d}%%%
+#
+my $logLine = "SSYTRACE(%%%{PBXSelectionStart}%%%, nil)\n" ;
+
+print $logLine;
+</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>4</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>589E9A0D-1985-41FB-9D42-243B7E40E2A6</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string>^$D</string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Remove All SSYTrace in File</string>
+				<key>script</key>
+				<string>#! /usr/bin/perl -w
+
+my @pseudoline = &lt;STDIN&gt; ; # read the file from standard input
+
+# Note that I call these pseudolines because, in fact, Xcode often concatenates several lines together, I believe, if they are at the same indentation level. Maybe they used \r instead of \n to do this?  I don't understand it.
+
+# In an earlier version of this script, I used a simpler algorithm which was to omit from outputString any line which contained "DebugLog".  But that sometimes caused neighboring lines to be omitted too, because of this pseudolines thing.
+
+# So now, I instead concatenate the whole thing into one long string, and then 'split' them into lines myself, on either \n OR \r, and then only print lines not containing the debug-marker string as detected by the m// operator.
+
+
+my $outputString = "" ;
+
+foreach my $line (@pseudoline) {
+	$outputString .= $line ;
+}
+
+my @lines = split(/[\n\r]/, $outputString) ;
+
+my $i = 0 ;
+foreach my $aLine (@lines) {
+	if ($aLine !~ (m/SSYTRACE\(/)) {
+		if ($i &gt; 0) {
+			print "\n" ;
+		}
+		print "$aLine" ;
+		$i++
+	}
+}
+</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>2</integer>
+				<key>scriptOutput</key>
+				<integer>2</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>5B6A23C3-8BD2-4EEC-8EEC-2EB0562CED5E</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScriptSeparator</string>
+				<key>uuid</key>
+				<string>4CD0F42A-04AF-483F-8A07-AB067DBB09D2</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Add asl_log at Cursor</string>
+				<key>script</key>
+				<string>#! /usr/bin/perl -w
+#
+# -- PB User Script Info --
+# This stuff was used in Xcode 2.0 but is ignored by Xcode 3.0.
+# %%%{PBXName=Add Debug NSLog At Cursor}%%%
+# %%%{PBXInput=None}%%%
+# %%%{PBXOutput=InsertAfterSelection}%%%
+# %%%{PBXKeyEquivalent=@~d}%%%
+#
+my $logLine = "/*DB?Line*/ asl_log(NULL, NULL, ASL_LEVEL_DEBUG, \"%%%{PBXSelectionStart}%%%: %s\", __PRETTY_FUNCTION__) ;\n" ;
+
+print $logLine;
+</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>4</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>597F5BA7-3CA4-405F-AB7B-2D75FBB04883</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Add printf at Cursor.pl</string>
+				<key>script</key>
+				<string>my $logLine = "/*DB?Line*/ printf(\"%%%{PBXSelectionStart}%%%: \\n\") ;\n" ;
+
+print $logLine;
+</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>4</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>5B7AC981-5EA5-4EC0-AD02-6160FFF7ED86</string>
+			</dict>
+		</array>
+		<key>uuid</key>
+		<string>C60A4E24-F8E7-4DE1-AA08-588BD67BDF3A</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScript</string>
+		<key>isFileScript</key>
+		<integer>0</integer>
+		<key>keyEquivalent</key>
+		<string></string>
+		<key>language</key>
+		<string>xcode.lang.sh</string>
+		<key>name</key>
+		<string>Roll Rev of Current Project</string>
+		<key>script</key>
+		<string>#!/bin/sh
+
+osascript /Users/jk/Documents/Programming/Scripts/SetProjectVersion.scpt CURRENT_PROJECT</string>
+		<key>scriptError</key>
+		<integer>1</integer>
+		<key>scriptInput</key>
+		<integer>1</integer>
+		<key>scriptOutput</key>
+		<integer>3</integer>
+		<key>scriptWorkingDirectory</key>
+		<integer>0</integer>
+		<key>uuid</key>
+		<string>00829595-70F4-4B71-A30A-A9AB5EBD9E07</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScriptGroup</string>
+		<key>name</key>
+		<string>Prune #imports</string>
+		<key>subNodes</key>
+		<array>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>1</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Prune#imports.app</string>
+				<key>script</key>
+				<string>/Users/jk/Documents/Programming/Scripts/Prune#imports.app</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>4</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>DE77C97D-122E-40B4-8DA4-B8D2E92C54FF</string>
+			</dict>
+		</array>
+		<key>uuid</key>
+		<string>479638A7-661D-4A72-B1C2-B2AA67AD87FD</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScriptSeparator</string>
+		<key>uuid</key>
+		<string>66F60820-E52B-4DD1-AE54-C08FAE55FC37</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScriptGroup</string>
+		<key>name</key>
+		<string>gdb Commands</string>
+		<key>subNodes</key>
+		<array>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Debugging Magic to clipboard</string>
+				<key>script</key>
+				<string>#! /usr/bin/perl -w
+use strict;
+
+# Use single quotes so that perl does not evaluate $ebp as a variable
+print('po *(int*)($ebp+4)') ;
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>4</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>0955F00D-4DF3-4D64-8BA9-3898328FA5F6</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Print Object 'self'</string>
+				<key>script</key>
+				<string>#! /usr/bin/perl -w
+use strict;
+
+# Prints Object 'self' on an Intel Mac
+
+print "po *(id **)(\$ebp+8)";
+
+exit 0;</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>0</integer>
+				<key>scriptOutput</key>
+				<integer>4</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>97D7FA80-5B58-4710-BD7E-A430094ED3AD</string>
+			</dict>
+		</array>
+		<key>uuid</key>
+		<string>BDCD86D9-FF65-47DB-AC80-A0BF273FF9F1</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScriptGroup</string>
+		<key>name</key>
+		<string>Bookdog</string>
+		<key>subNodes</key>
+		<array>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>1</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Esellerize_Bad.command</string>
+				<key>script</key>
+				<string>/Users/jk/Documents/Programming/Scripts/XcodeUserMenu/Bookdog/Esellerize_Bad.command</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>E4D55F87-D95C-4512-AADB-B8CB8091B9D2</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>1</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Esellerize_Good.command</string>
+				<key>script</key>
+				<string>/Users/jk/Documents/Programming/Scripts/XcodeUserMenu/Bookdog/Esellerize_Good.command</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>F23CB9E5-E3FF-4772-8DE5-9A879EA1E7FC</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>1</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>License.command</string>
+				<key>script</key>
+				<string>/Users/jk/Documents/Programming/Scripts/XcodeUserMenu/Bookdog/License.command</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>A1C2C71E-33B9-482A-B8B1-E7739B025283</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>1</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Unlicense.command</string>
+				<key>script</key>
+				<string>/Users/jk/Documents/Programming/Scripts/XcodeUserMenu/Bookdog/Unlicense.command</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>B2BCEB24-8463-47DF-B622-7DCC56007E3A</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScriptGroup</string>
+				<key>name</key>
+				<string>Launch_Localized.app</string>
+				<key>subNodes</key>
+				<array>
+					<dict>
+						<key>ClassName</key>
+						<string>XCUserScriptGroup</string>
+						<key>name</key>
+						<string>Contents</string>
+						<key>subNodes</key>
+						<array>
+							<dict>
+								<key>ClassName</key>
+								<string>XCUserScriptGroup</string>
+								<key>name</key>
+								<string>MacOS</string>
+								<key>subNodes</key>
+								<array>
+									<dict>
+										<key>ClassName</key>
+										<string>XCUserScript</string>
+										<key>isFileScript</key>
+										<integer>1</integer>
+										<key>keyEquivalent</key>
+										<string></string>
+										<key>language</key>
+										<string>xcode.lang.sh</string>
+										<key>name</key>
+										<string>applet</string>
+										<key>script</key>
+										<string>/Users/jk/Documents/Programming/Scripts/XcodeUserMenu/Bookdog/Launch_Localized.app/Contents/MacOS/applet</string>
+										<key>scriptError</key>
+										<integer>3</integer>
+										<key>scriptInput</key>
+										<integer>1</integer>
+										<key>scriptOutput</key>
+										<integer>4</integer>
+										<key>scriptWorkingDirectory</key>
+										<integer>0</integer>
+										<key>uuid</key>
+										<string>3FD1C8D2-EEE2-48D0-B26A-5E4B9B0962F8</string>
+									</dict>
+								</array>
+								<key>uuid</key>
+								<string>EE90A24D-2272-40C7-8F3E-C8D8C6A7DF61</string>
+							</dict>
+							<dict>
+								<key>ClassName</key>
+								<string>XCUserScriptGroup</string>
+								<key>name</key>
+								<string>Resources</string>
+								<key>subNodes</key>
+								<array>
+									<dict>
+										<key>ClassName</key>
+										<string>XCUserScriptGroup</string>
+										<key>name</key>
+										<string>description.rtfd</string>
+										<key>subNodes</key>
+										<array/>
+										<key>uuid</key>
+										<string>FF2784B7-30B9-4059-82A4-B51761301E90</string>
+									</dict>
+									<dict>
+										<key>ClassName</key>
+										<string>XCUserScriptGroup</string>
+										<key>name</key>
+										<string>Scripts</string>
+										<key>subNodes</key>
+										<array>
+											<dict>
+												<key>ClassName</key>
+												<string>XCUserScript</string>
+												<key>isFileScript</key>
+												<integer>1</integer>
+												<key>keyEquivalent</key>
+												<string></string>
+												<key>language</key>
+												<string>xcode.lang.sh</string>
+												<key>name</key>
+												<string>main.scpt</string>
+												<key>script</key>
+												<string>/Users/jk/Documents/Programming/Scripts/XcodeUserMenu/Bookdog/Launch_Localized.app/Contents/Resources/Scripts/main.scpt</string>
+												<key>scriptError</key>
+												<integer>3</integer>
+												<key>scriptInput</key>
+												<integer>0</integer>
+												<key>scriptOutput</key>
+												<integer>4</integer>
+												<key>scriptWorkingDirectory</key>
+												<integer>0</integer>
+												<key>uuid</key>
+												<string>F24F6A4A-E4EB-45CC-891B-1170DDADB80D</string>
+											</dict>
+										</array>
+										<key>uuid</key>
+										<string>D4080794-7D3F-419B-94F4-76D4494E63EA</string>
+									</dict>
+								</array>
+								<key>uuid</key>
+								<string>7B66E550-DD5F-496E-90D8-B76EE8851C58</string>
+							</dict>
+						</array>
+						<key>uuid</key>
+						<string>BCDB03F5-BC43-4FDF-981B-B16EAF3656E2</string>
+					</dict>
+				</array>
+				<key>uuid</key>
+				<string>BAC698E7-C388-4F69-A750-28F658908D97</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScriptGroup</string>
+				<key>name</key>
+				<string>License_For.app</string>
+				<key>subNodes</key>
+				<array>
+					<dict>
+						<key>ClassName</key>
+						<string>XCUserScriptGroup</string>
+						<key>name</key>
+						<string>Contents</string>
+						<key>subNodes</key>
+						<array>
+							<dict>
+								<key>ClassName</key>
+								<string>XCUserScriptGroup</string>
+								<key>name</key>
+								<string>MacOS</string>
+								<key>subNodes</key>
+								<array>
+									<dict>
+										<key>ClassName</key>
+										<string>XCUserScript</string>
+										<key>isFileScript</key>
+										<integer>1</integer>
+										<key>keyEquivalent</key>
+										<string></string>
+										<key>language</key>
+										<string>xcode.lang.sh</string>
+										<key>name</key>
+										<string>applet</string>
+										<key>script</key>
+										<string>/Users/jk/Documents/Programming/Scripts/XcodeUserMenu/Bookdog/License_For.app/Contents/MacOS/applet</string>
+										<key>scriptError</key>
+										<integer>3</integer>
+										<key>scriptInput</key>
+										<integer>1</integer>
+										<key>scriptOutput</key>
+										<integer>4</integer>
+										<key>scriptWorkingDirectory</key>
+										<integer>0</integer>
+										<key>uuid</key>
+										<string>F9C1A8B4-7C07-4B27-BFC6-94C0C0DCF7ED</string>
+									</dict>
+								</array>
+								<key>uuid</key>
+								<string>13DDD01C-8E57-4010-8BDB-F66611574630</string>
+							</dict>
+							<dict>
+								<key>ClassName</key>
+								<string>XCUserScriptGroup</string>
+								<key>name</key>
+								<string>Resources</string>
+								<key>subNodes</key>
+								<array>
+									<dict>
+										<key>ClassName</key>
+										<string>XCUserScriptGroup</string>
+										<key>name</key>
+										<string>description.rtfd</string>
+										<key>subNodes</key>
+										<array/>
+										<key>uuid</key>
+										<string>EE49F69A-6F2A-4FEB-83F2-BC667627AA40</string>
+									</dict>
+									<dict>
+										<key>ClassName</key>
+										<string>XCUserScriptGroup</string>
+										<key>name</key>
+										<string>Scripts</string>
+										<key>subNodes</key>
+										<array>
+											<dict>
+												<key>ClassName</key>
+												<string>XCUserScript</string>
+												<key>isFileScript</key>
+												<integer>1</integer>
+												<key>keyEquivalent</key>
+												<string></string>
+												<key>language</key>
+												<string>xcode.lang.sh</string>
+												<key>name</key>
+												<string>main.scpt</string>
+												<key>script</key>
+												<string>/Users/jk/Documents/Programming/Scripts/XcodeUserMenu/Bookdog/License_For.app/Contents/Resources/Scripts/main.scpt</string>
+												<key>scriptError</key>
+												<integer>3</integer>
+												<key>scriptInput</key>
+												<integer>0</integer>
+												<key>scriptOutput</key>
+												<integer>4</integer>
+												<key>scriptWorkingDirectory</key>
+												<integer>0</integer>
+												<key>uuid</key>
+												<string>B51A3412-AD98-4502-9E17-B82D12306E08</string>
+											</dict>
+										</array>
+										<key>uuid</key>
+										<string>9A32B8B1-308C-4CD9-A265-59A95D802541</string>
+									</dict>
+								</array>
+								<key>uuid</key>
+								<string>87CD62BE-D975-400A-B6B9-5A41FF0A792D</string>
+							</dict>
+						</array>
+						<key>uuid</key>
+						<string>AC07BE5A-ECB2-4B85-BF06-DDBA029340AC</string>
+					</dict>
+				</array>
+				<key>uuid</key>
+				<string>18604C2A-E5E8-44FE-B136-7ADD54B48FB7</string>
+			</dict>
+		</array>
+		<key>uuid</key>
+		<string>73A8814D-1D96-41BE-B58B-880768FFDCCE</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScriptGroup</string>
+		<key>name</key>
+		<string>BookMacster</string>
+		<key>subNodes</key>
+		<array>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Agents: Remove all staged jobs</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+cd ~/Library/LaunchAgents
+launchctl unload com.sheepsystems.BookMacster.*.*.*.*.*.plist
+rm -f com.sheepsystems.BookMacster.*.*.*.*.*.plist
+# Asterisk 1 is: a UUID
+# Asterisk 2 is: the agent index
+# Asterisk 3 is: the trigger index
+# Asterisk 4 is: doSoon, doOver or standby
+# Asterisk 5 is: a PID, or noPid
+
+# The following is too messy to read
+# JOBS_STILL_LOADED=`launchctl list | grep BookMacster`
+# echo "Jobs still loaded: $JOBS_STILL_LOADED"</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>DB8B9618-09BA-46EC-9548-4F557F523ABD</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Agents: Unload but don't remove all staged jobs</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+cd ~/Library/LaunchAgents
+launchctl unload com.sheepsystems.BookMacster.*.*.*.*.*.plist
+# Asterisk 1 is: a UUID
+# Asterisk 2 is: the agent index
+# Asterisk 3 is: the trigger index
+# Asterisk 4 is: doSoon, doOver or standby
+# Asterisk 5 is: a PID, or noPid
+
+# The following is too messy to read
+# JOBS_STILL_LOADED=`launchctl list | grep BookMacster`
+# echo "Jobs still loaded: $JOBS_STILL_LOADED"</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>CE8E3E6C-658B-4176-9101-FF7B7D78719F</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Agents : Remove, Unload All</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+cd ~/Library/LaunchAgents
+FILES=com.sheepsystems.BookMacster.*.*.*.plist
+for f in $FILES
+do
+	launchctl unload $f
+	rm $f
+	echo "Unloaded and removed $f"
+	echo
+done
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>0</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>9232576A-9050-4BFD-938E-186C189E81D5</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Prefs: Allow only 1 Bookmarkshelf</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+defaults write com.sheepsystems.BookMacster bkmslfsWarningLimit 1
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>0</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>179A8DBF-7EA0-4AF8-BE4F-C59602C969E7</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Prefs: Minimize bookmarksChangeDelay</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+defaults write com.sheepsystems.BookMacster bookmarksChangeDelay2 60
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>0</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>9764F426-A145-4C66-8062-DBCB723A61F9</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Prefs: License to Bonehead</string>
+				<key>script</key>
+				<string># It is not reliable to modify preferences while apps are running.
+osascript -e "try" -e "tell application \"BookMacster\" to quit" -e "end try"
+
+# Now we want to overwrite the relevant keys in the preferences.  The following would overwrite all defaults in the file.  This is not what we want:
+# defaults write com.sheepsystems.Bookdog '{"licenseeName" = "WHOEVER"; "serialNumber" = "WHATEVER";}'
+# However, the following overwrites only the two relevant keys:
+defaults write com.sheepsystems.BookMacster LicenseeName 'Bonehead 134679'
+defaults write com.sheepsystems.BookMacster LicenseKey 'lFsJQdkNuJPV8mo6slrRtBfHOfCO9ZgfWH362ure45M5cqdD9VYbp2JbiUiVgxIqkvs/0AxcSDvbKlODzE8iOmNoRnJN0QfZlS78kx9oIzpKnhJMModexZOS049inHXY40qyTDZ4XdOE/GCAUeidi582IRS7YpVy6pJByv5Q+STfjgMAdXuvm1mQW4wavXOI72MLG/He9QRhKXM7Bnp//AN3Tzlf6Lsp2OpWqMEp0gzZLw1dpnZlaTCc5zk2Z3hHCRmRv7iOw5D/dT4r6k5MJ2Acci2w1XKRiAeXXbugGFjwOHMKK7dSuZ+jh9OcBH34xddcHSMmxnK5NGngJvei7g=='
+
+echo
+echo
+echo "If BookMacster was running, it has been been quit."
+echo "BookMacster has been licensed to Bonehead 134679 at the User/Home level."
+echo You may close this window now.</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>3058E9EB-9C54-4A12-9B16-F5F1D28D42B9</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Prefs: Unlicense</string>
+				<key>script</key>
+				<string># It is not reliable to modify preferences while apps are running.
+osascript -e "try" -e "tell application \"BookMacster\" to quit" -e "end try"
+
+# Now we want to overwrite the relevant keys in the preferences to nonsense values.  The following would overwrite all defaults in the file.  This is not what we want
+# defaults write com.sheepsystems.Bookdog '{"licenseeName" = "Nobody"; "serialNumber" = "nothing";}'
+# However, the following overwrites only the two relevant keys:
+defaults write com.sheepsystems.BookMacster LicenseeName 'Nobody'
+defaults write com.sheepsystems.BookMacster LicenseKey 'nothing'
+
+# Unfortunately, the 'defaults' command does not affect the any-user preferences at the system level.  Fortunately, though, LicenseeName and LicenseKey are the only keys that we write at the system level.  So we can simply delete the whole file.  The 'rm' command would fail if elevated permissions are necessary, so instead we tell Finder to do it.  Finder will display the authentication dialog if necessary.
+osascript -e "try" -e "tell application \"Finder\" to delete POSIX file \"/Library/Preferences/com.sheepsystems.BookMacster.plist\"" -e "end try"
+</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>C7A4A347-354E-447A-B36D-7C4BBAAF17B8</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Prefs &amp; App Support: Remove all, then license to Bonehead</string>
+				<key>script</key>
+				<string># It is not reliable to modify preferences while apps are running.
+osascript -e "try" -e "tell application \"BookMacster\" to quit" -e "end try"
+
+rm -Rf ~/Library/Application\ Support/BookMacster
+echo Removed BookMacster App Support
+ls -al ~/Library/Application\ Support/BookMacster
+rm -Rf ~/Library/Preferences/com.sheepsystems.BookMacster.plist
+echo Removed BookMacster prefs
+# Now we want to overwrite the relevant keys in the preferences to nonsense values.  The following would overwrite all defaults in the file.  This is not what we want
+# defaults write com.sheepsystems.Bookdog '{"licenseeName" = "Nobody"; "serialNumber" = "nothing";}'
+# However, the following overwrites only the two relevant keys:
+defaults write com.sheepsystems.BookMacster LicenseeName 'Bonehead 134679'
+defaults write com.sheepsystems.BookMacster LicenseKey 'lFsJQdkNuJPV8mo6slrRtBfHOfCO9ZgfWH362ure45M5cqdD9VYbp2JbiUiVgxIqkvs/0AxcSDvbKlODzE8iOmNoRnJN0QfZlS78kx9oIzpKnhJMModexZOS049inHXY40qyTDZ4XdOE/GCAUeidi582IRS7YpVy6pJByv5Q+STfjgMAdXuvm1mQW4wavXOI72MLG/He9QRhKXM7Bnp//AN3Tzlf6Lsp2OpWqMEp0gzZLw1dpnZlaTCc5zk2Z3hHCRmRv7iOw5D/dT4r6k5MJ2Acci2w1XKRiAeXXbugGFjwOHMKK7dSuZ+jh9OcBH34xddcHSMmxnK5NGngJvei7g=='
+echo Licensed BookMacster to Bonehead
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>0</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>2EE62B3A-84D1-4B88-AF22-A636EB5D7F56</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Prefs &amp; Recent Docs: Remove All</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+rm -Rf ~/Library/Preferences/com.sheepsystems.BookMacster.plist
+rm -Rf ~/Library/Preferences/com.sheepsystems.BookMacster.LSSharedFileList.plist
+</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>4</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>1CC3B47C-12AD-4F56-8DFF-5C5A987DC4E9</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Prefs, App Support &amp; Recent Docs: Remove All</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+rm -Rf ~/Library/Preferences/com.sheepsystems.BookMacster.plist
+rm -Rf ~/Library/Application\ Support/BookMacster
+rm -Rf ~/Library/Preferences/com.sheepsystems.BookMacster.LSSharedFileList.plist
+</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>4</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>7A7B45AA-619F-472A-8CFD-BEBD69810C5B</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScriptGroup</string>
+				<key>name</key>
+				<string>Distribution to other Macs</string>
+				<key>subNodes</key>
+				<array>
+					<dict>
+						<key>ClassName</key>
+						<string>XCUserScript</string>
+						<key>isFileScript</key>
+						<integer>0</integer>
+						<key>keyEquivalent</key>
+						<string></string>
+						<key>language</key>
+						<string>xcode.lang.sh</string>
+						<key>name</key>
+						<string>Zip Release Build to /Volumes/Macintosh\ HD</string>
+						<key>script</key>
+						<string>#!/bin/sh
+
+osascript -e "say \"cleaning\""
+
+rm -Rf /Volumes/Macintosh\ HD/Applications/BookMacster.app
+rm -Rf /Volumes/Macintosh\ HD/Applications/BookMacster.app.zip
+
+osascript -e "say \"zipping\""
+
+cd /Users/jk/Documents/Programming/Builds/Release/
+rm -f BookMacster.app.zip
+zip -rq BookMacster.app.zip BookMacster.app
+
+osascript -e "say \"copying\""
+
+cp -Rf /Users/jk/Documents/Programming/Builds/Release/BookMacster.app.zip /Volumes/Macintosh\ HD/Applications/BookMacster.app.zip
+
+osascript -e "say \"ready to unzip\""
+
+exit
+
+# Stop here because unzipping remotely takes a long time, probably because, duh, it has to pass to zipped file over to this Mac and then pass the unzipped file back.
+
+cd /Volumes/Macintosh\ HD/Applications
+
+osascript -e "say \"unzipping\""
+
+unzip BookMacster.app.zip
+rm -Rf BookMacster.app.zip
+
+osascript -e "say \"done\""
+
+</string>
+						<key>scriptError</key>
+						<integer>1</integer>
+						<key>scriptInput</key>
+						<integer>1</integer>
+						<key>scriptOutput</key>
+						<integer>3</integer>
+						<key>scriptWorkingDirectory</key>
+						<integer>0</integer>
+						<key>uuid</key>
+						<string>E071BF13-FCBD-4E25-8473-3826DCA7EED7</string>
+					</dict>
+					<dict>
+						<key>ClassName</key>
+						<string>XCUserScript</string>
+						<key>isFileScript</key>
+						<integer>0</integer>
+						<key>keyEquivalent</key>
+						<string></string>
+						<key>language</key>
+						<string>xcode.lang.sh</string>
+						<key>name</key>
+						<string>Zip Debug Build to MacMini1</string>
+						<key>script</key>
+						<string>#!/bin/sh
+
+osascript -e "say \"cleaning\""
+
+rm -Rf /Volumes/MacMini1-1/Applications/BookMacster.app
+rm -Rf /Volumes/MacMini1-1/Applications/BookMacster.app.zip
+
+osascript -e "say \"zipping\""
+
+cd /Users/jk/Documents/Programming/Builds/Debug/
+rm -f BookMacster.app.zip
+zip -rq BookMacster.app.zip BookMacster.app
+
+osascript -e "say \"copying\""
+
+cp -Rf /Users/jk/Documents/Programming/Builds/Debug/BookMacster.app.zip /Volumes/MacMini1-1/Applications/BookMacster.app.zip
+
+cd /Volumes/MacMini1-1/Applications
+
+osascript -e "say \"ready to unzip\""
+
+exit
+
+# Stop here because unzipping remotely takes a long time, probably because, duh, it has to pass to zipped file over to this Mac and then pass the unzipped file back.
+
+osascript -e "say \"unzipping\""
+
+unzip BookMacster.app.zip
+rm -Rf BookMacster.app.zip
+
+osascript -e "say \"done\""
+
+</string>
+						<key>scriptError</key>
+						<integer>1</integer>
+						<key>scriptInput</key>
+						<integer>1</integer>
+						<key>scriptOutput</key>
+						<integer>3</integer>
+						<key>scriptWorkingDirectory</key>
+						<integer>0</integer>
+						<key>uuid</key>
+						<string>E96E8C85-3CF9-4026-9DF3-A648D896E5B7</string>
+					</dict>
+				</array>
+				<key>uuid</key>
+				<string>84C1BC59-B646-4A6D-98F7-28D46856ADCB</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Generate ISheepSysJSXPCOM.h (Firefox extension) </string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+PROJECT_DIR=~/Documents/Programming/Projects/BookMacster
+PROJECTS_DIR=$PROJECT_DIR/..
+FIREFOX_EXTENSIONS_DEV_DIR=$PROJECT_DIR/ExtensionsBrowser/Firefox
+GECKO_PROJECT_DIR=xulrunner-sdk-7.0-x86_64
+XPIDL_DIR=$GECKO_PROJECT_DIR
+
+IDL_COMMAND=$PROJECTS_DIR/$XPIDL_DIR/bin/xpidl
+IDL_DIR=$PROJECTS_DIR/$XPIDL_DIR/idl
+XPCOM_SOURCE_DIR=$FIREFOX_EXTENSIONS_DEV_DIR/XPCOM/JavaScript
+SOURCE_IDL_FILE=$XPCOM_SOURCE_DIR/ISheepSysJSXPCOM.idl
+XPT_INSTALL_DIR=$FIREFOX_EXTENSIONS_DEV_DIR/SheepSystemsFirefoxExtension/Common/components
+MAKEFILE=$XPCOM_SOURCE_DIR/ISheepSysBinXPCOM.make
+GEN_HEADER_NAME=$XPCOM_SOURCE_DIR/ISheepSysJSXPCOM
+XPT_OUTPUT_FILE=$XPT_INSTALL_DIR/ISheepSysJSXPCOM
+
+$IDL_COMMAND -w -m header -I "$IDL_DIR" -o "$GEN_HEADER_NAME" $SOURCE_IDL_FILE
+
+$IDL_COMMAND -w -m typelib -I "$IDL_DIR" -o "$XPT_OUTPUT_FILE" $SOURCE_IDL_FILE
+
+echo By executing command:
+echo $IDL_COMMAND
+echo
+echo From source file:
+echo $SOURCE_IDL_FILE
+echo
+echo Generated header file:
+echo $GEN_HEADER_NAME
+echo
+echo Generated typelib file:
+echo $XPT_OUTPUT_FILE</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>0</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>3</integer>
+				<key>uuid</key>
+				<string>221815EF-5AB1-4B8B-B38F-8723A682D125</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Build Help Book</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+echo "Open a Terminal window and use the QuicKeys menu."</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>3504B738-160A-465C-A53B-B52567F11213</string>
+			</dict>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Un-uninstall</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+# Preferences
+cp -fpX "/Users/jk/.Trash/com.sheepsystems.BookMacster.plist" "/Users/jk/Library/Preferences"
+rm -f "/Users/jk/.Trash/com.sheepsystems.BookMacster.plist"
+
+
+# App Support Folder
+rm -Rf "/Users/jk/Library/Application Support/BookMacster"
+cp -RfpX "/Users/jk/.Trash/BookMacster" "/Users/jk/Library/Application Support"
+rm -Rf "/Users/jk/.Trash/BookMacster"
+
+# Individual .bkmslf files which were copied out of App Support separately, before it was trashed
+cp -f /Users/jk/.Trash/*.bkmslf "/Users/jk/Library/Application Support/BookMacster/Bookmarkshelf Documents/"
+rm -f /Users/jk/.Trash/*.bkmslf
+</string>
+				<key>scriptError</key>
+				<integer>1</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>1444D25F-C229-436C-BB20-C612562602BE</string>
+			</dict>
+		</array>
+		<key>uuid</key>
+		<string>78CB1891-3802-4201-9BB4-5C7427619DB3</string>
+	</dict>
+	<dict>
+		<key>ClassName</key>
+		<string>XCUserScriptGroup</string>
+		<key>name</key>
+		<string>CFMessagePortStuff</string>
+		<key>subNodes</key>
+		<array>
+			<dict>
+				<key>ClassName</key>
+				<string>XCUserScript</string>
+				<key>isFileScript</key>
+				<integer>0</integer>
+				<key>keyEquivalent</key>
+				<string></string>
+				<key>language</key>
+				<string>xcode.lang.sh</string>
+				<key>name</key>
+				<string>Copy Releases to Colette's /Applications</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+cp -Rf /Users/jk/Documents/Programming/Builds/Release/CFMessagePortDemoClient /Volumes/Macintosh\ HD/Applications/CFMessagePortDemoClient
+
+cp -Rf /Users/jk/Documents/Programming/Builds/Release/CFMessagePortBugger-App.app /Volumes/Macintosh\ HD/Applications/CFMessagePortBugger-App.app
+
+cp -Rf /Users/jk/Documents/Programming/Builds/Release/CFMessagePortBugger-Tool /Volumes/Macintosh\ HD/Applications/CFMessagePortBugger-Tool
+</string>
+				<key>scriptError</key>
+				<integer>3</integer>
+				<key>scriptInput</key>
+				<integer>1</integer>
+				<key>scriptOutput</key>
+				<integer>3</integer>
+				<key>scriptWorkingDirectory</key>
+				<integer>0</integer>
+				<key>uuid</key>
+				<string>BAE975BC-A711-4138-AC0A-8D3F1A307221</string>
+			</dict>
+		</array>
+		<key>uuid</key>
+		<string>121527D0-38F6-4364-940D-90F417B4C9A8</string>
+	</dict>
+</array>
+</plist>

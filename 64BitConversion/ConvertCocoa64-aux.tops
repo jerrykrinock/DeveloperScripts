@@ -1,0 +1,656 @@
+/*
+Cocoa64.tops
+
+Do not run this version of the script directly on your source code! This is a version of the original
+Cocoa64.tops file modified for use with the ConvertCocoa64 ruby script. Please run that script instead.
+*/
+ 
+
+/******************** NSInteger and NSUInteger ********************/
+
+
+/* Protect unsigned chars and shorts, also long long */
+replace "unsigned char" with "UNSIGNEDCHAR_DONTREPLACE" 
+replace "char unsigned" with "CHARUNSIGNED_DONTREPLACE" 
+replace "unsigned const char" with "UNSIGNEDCONSTCHAR_DONTREPLACE" 
+replace "unsigned short" with "UNSIGNEDSHORT_DONTREPLACE" 
+replace "short unsigned" with "SHORTUNSIGNED_DONTREPLACE" 
+replace "unsigned long long" with "UNSIGNEDLONGLONG_DONTREPLACE" 
+replace "long long unsigned" with "LONGLONGUNSIGNED_DONTREPLACE" 
+replace "long long" with "LONGLONG_DONTREPLACE" 
+replace "long double" with "LONGDOUBLE_DONTREPLACE"
+
+/* Protect main */
+replace "int main<w sp>(int argc, <b args>)" with "INT_DONTREPLACE main<w sp>(INT_DONTREPLACE argc, <b args>)"
+
+/* Protect bit-fields */
+replace "unsigned int<w space><t bitfield>:<t bit>;" with "UNSIGNEDINT_BITFIELD_DONTREPLACE<w space><t bitfield>:<t bit>;"
+replace "unsigned int<w space>:<t bit>;" with "UNSIGNEDINT_BITFIELD_DONTREPLACE<w space>:<t bit>;"
+
+replace "unsigned<w space><t bitfield>:<t bit>;" with "UNSIGNED_BITFIELD_DONTREPLACE<w space><t bitfield>:<t bit>;"
+replace "unsigned<w space>:<t bit>;" with "UNSIGNED_BITFIELD_DONTREPLACE<w space>:<t bit>;"
+
+replace "int<w space><t bitfield>:<t bit>;" with "INT_BITFIELD_DONTREPLACE<w space><t bitfield>:<t bit>;"
+replace "int<w space>:<t bit>;" with "INT_BITFIELD_DONTREPLACE<w space>:<t bit>;"
+
+replace "long<w space><t bitfield>:<t bit>;" with "LONG_BITFIELD_DONTREPLACE<w space><t bitfield>:<t bit>;"
+replace "long<w space>:<t bit>;" with "LONG_BITFIELD_DONTREPLACE<w space>:<t bit>;"
+
+/* Protect type-specific API */
+replace "(int)intValue" with "(INT_DONTREPLACE)intValue"
+replace "<t methodName>:(int)" with "<t methodName>:(INT_DONTREPLACE)" where ("<t methodName>") isOneOf {("initWithInt"), ("numberWithInt"), ("setIntValue")}
+replace "(long)longValue" with "(LONG_DONTREPLACE)longValue"
+replace "<t methodName>:(long)" with "<t methodName>:(LONG_DONTREPLACE)" where ("<t methodName>") isOneOf {("initWithLong"), ("numberWithLong"), ("setLongValue")}
+replace "(unsigned int)unsignedIntValue" with "(UNSIGNEDINT_DONTREPLACE)unsignedIntValue"
+replace "<t methodName>:(unsigned int)" with "<t methodName>:(UNSIGNEDINT_DONTREPLACE)" where ("<t methodName>") isOneOf {("initWithUnsignedInt"), ("numberWithUnsignedInt"), ("setUnsignedIntValue")}
+replace "(unsigned long)unsignedLongValue" with "(UNSIGNEDLONG_DONTREPLACE)unsignedLongValue"
+replace "<t methodName>:(unsigned long)" with "<t methodName>:(UNSIGNEDLONG_DONTREPLACE)" where ("<t methodName>") isOneOf {("initWithUnsignedLong"), ("numberWithUnsignedLong"), ("setUnsignedLongValue")}
+replace "(int)scriptErrorNumber" with "(INT_DONTREPLACE)scriptErrorNumber"
+replace "setScriptErrorNumber:(int)" with "setScriptErrorNumber:(INT_DONTREPLACE)"
+/* NSFont.h - typedef NSGlyph should remain unsigned int */
+replace "typedef<w sp>unsigned<w sp1>int<w sp2>NSGlyph" with "typedef<w sp>UNSIGNEDINT_DONTREPLACE<w sp2>NSGlyph"
+/* Don't define NSUInteger in terms of itself! */
+replace "typedef<w sp>unsigned<w sp1>int<w sp2>NSUInteger" with "typedef<w sp>UNSIGNEDINT_DONTREPLACE<w sp2>NSUInteger"
+
+/* -(unsigned)systemVersion */
+replace "-<w sp>(unsigned<w sp1>int)systemVersion" with "-<w sp>(UNSIGNEDINT_DONTREPLACE)systemVersion"
+replace "-<w sp>(unsigned)systemVersion" with "-<w sp>(UNSIGNED_DONTREPLACE)systemVersion"
+
+/* fileDescriptor should remain int */
+replace "initWithFileDescriptor:(int)" with "initWithFileDescriptor:(INT_DONTREPLACE)"
+replace "-<w sp>(int)fileDescriptor" with "-<w sp>(INT_DONTREPLACE)fileDescriptor"
+
+/* serialization should continue to use int? */
+replace "<t methodName>:(int" with "<t methodName>:(INT_DONTREPLACE" where ("<t methodName>") isOneOf {
+    ("serializeInt"), ("serializeInts"), ("deserializeInts")
+}
+
+replace "-<w sp>(int)<t methodName>" with "-<w sp>(INT_DONTREPLACE)<t methodName>" where ("<t methodName>") isOneOf {
+    ("deserializeIntAtIndex"), ("deserializeIntAtCursor")
+}
+
+/* scanInt method definition and declaration */
+replace "-<w sp>(BOOL)scanInt:(int *)" with "-<w sp>(BOOL)scanInt:(INT_DONTREPLACE *)"
+replace "-<w sp>(BOOL)scanHexInt:(unsigned<w sp1>*)" with "-<w sp>(BOOL)scanHexInt:(UNSIGNED_DONTREPLACE<w sp1>*)"
+
+/* encodeInt, decodeInt method definitions and declarations */
+replace "encodeInt:(int)" with "encodeInt:(INT_DONTREPLACE)"
+replace "(int)decodeIntForKey" with "(INT_DONTREPLACE)decodeIntForKey"
+
+/* processIdentifier, terminationStatus */
+replace "-<w sp>(int)<t methodName>" with "-<w sp>(INT_DONTREPLACE)<t methodName>" where ("<t methodName>") isOneOf {
+    ("processIdentifier"), ("terminationStatus")
+}
+/* NSPort, NSSocketPort should remain int */
+    /* protocol:, initWithProtocolFamily:, initRemoteWithProtocolFamily:, socketType: */
+replace "<t name>:(int)" with "<t name>:(INT_DONTREPLACE)" where ("<t name>") isOneOf {
+    ("initWithProtocolFamily"), ("initRemoteWithProtocolFamily"), ("socketType"), ("protocol")
+}
+    /* -protocolFamily, -socketType, -protocol */
+replace "-<w sp>(int)<t method>" with "-<w sp>(INT_DONTREPLACE)<t method>" where ("<t method>") isOneOf {
+    ("protocolFamily"), ("socketType"), ("protocol") 
+}
+    /* +portWithMachPort:, -initWithMachPort:, -machPort */
+replace "(int)machPort" with "(INT_DONTREPLACE)machPort"
+
+/* NSApplicationMain */
+replace "int NSApplicationMain(int" with "INT_DONTREPLACE NSApplicationMain(INT_DONTREPLACE"
+
+/* Special cases for NSHashCode, NSOptionFlags.  Note: we are not planning to do these conversions, but the special rules might come in handy if we go with typedefs for specific enumerated values */
+/* COMMENTED OUT
+replace "(<type>)hash" with "(NSHashCode)hash" where ("<type>") isOneOf {("unsigned"), ("unsigned<w sp>int")}
+replace "(void)<t method>:(unsigned int)" with "(void)<t method>:(NSOptionFlags)" where ("<t method>") isOneOf {
+    ("setGridStyleMask"), ("setAutoresizingMask")
+}
+replace "setResizingMask:(<type>)" with "setResizingMask:(NSOptionFlags)" where ("<type>") isOneOf {("unsigned int"), ("unsigned")}
+
+replace "(unsigned int)<t method>" with "(NSOptionFlags)<t method>" where ("<t method>") isOneOf {
+    ("gridStyleMask"), ("autoresizingMask")
+}
+replace "(unsigned int)<t method>:" with "(NSOptionFlags)<t method>:" where ("<t method>") isOneOf {
+    ("validModesForFontPanel")
+}
+*/
+
+/* styleMask, style -> NSOptionFlags */
+/* COMMENTED OUT
+replace "styleMask:(unsigned int)" with "styleMask:(NSOptionFlags)"
+replace "(unsigned int)styleMask" with "(NSOptionFlags)styleMask"
+replace "(unsigned int)style" with "(NSOptionFlags)style"
+*/
+
+/* *options -> NSOptionFlags */
+/* COMMENTED OUT
+replace "options:(<type>)" with "options:(NSOptionFlags)" where ("<type>") isOneOf {("unsigned int"), ("unsigned")}
+replace "options:(int)" with "options:(NSOptionFlags)" warning "64BIT: This was int before the conversion"
+replace "(<type>)layoutOptions" with "(NSOptionFlags)layoutOptions" where ("<type>") isOneOf {("unsigned int"), ("unsigned")}
+replace "(<type>)options" with "(NSOptionFlags)options" where ("<type>") isOneOf {("unsigned int"), ("unsigned")}
+replace "(int)options" with "(NSOptionFlags)options" warning "64BIT: This was int before the conversion"
+replace "(<type>)listOptions" with "(NSOptionFlags)listOptions" where ("<type>") isOneOf {("unsigned int"), ("unsigned")}
+replace "(<type>)optionsFromPanel" with "(NSOptionFlags)optionsFromPanel" where ("<type>") isOneOf {("unsigned int"), ("unsigned")}
+*/
+
+/* *mask -> NSOptionFlags */
+/* COMMENTED OUT
+replace "(<type>)resizingMask" with "(NSOptionFlags)resizingMask" where ("<type>") isOneOf {("unsigned int"), ("unsigned")}
+replace "mask:(<type>)" with "mask:(NSOptionFlags)" where ("<type>") isOneOf {("unsigned int"), ("unsigned")}
+replace "coalesceMask:(<type>)" with "coalesceMask:(NSOptionFlags)" where ("<type>") isOneOf {("unsigned<w sp>int"), ("unsigned")}
+replace ":(<type>)mask" with ":(NSOptionFlags)mask" where ("<type>") isOneOf {("unsigned<w sp>int"), ("unsigned")}
+replace "setPickerMask:(int)" with "setPickerMask:(NSOptionFlags)" warning "64BIT: This was int before the conversion"
+replace "initWithPickerMask:(int)" with "initWithPickerMask:(NSOptionFlags)" warning "64BIT: This was int before the conversion"
+replace "unsigned int NSEventMaskFromType" with "NSOptionFlags NSEventMaskFromType"
+replace "(<type>)keyEquivalentModifierMask" with "(NSOptionFlags)keyEquivalentModifierMask" where ("<type>") isOneOf {("unsigned<w sp>int"), ("unsigned")}
+replace "setKeyEquivalentModifierMask:(<type>)" with "setKeyEquivalentModifierMask:(NSOptionFlags)" where ("<type>") isOneOf {("unsigned<w sp>int"), ("unsigned")}
+replace "(<type>)userKeyEquivalentModifierMask" with "(NSOptionFlags)userKeyEquivalentModifierMask" where ("<type>") isOneOf {("unsigned<w sp>int"), ("unsigned")}
+
+replace "(<type>)editedMask" with "(NSOptionFlags)editedMask" where ("<type>") isOneOf {("unsigned<w sp>int"), ("unsigned")}
+replace "(<type>)capabilityMask" with "(NSOptionFlags)capabilityMask" where ("<type>") isOneOf {("unsigned<w sp>int"), ("unsigned")}
+*/
+
+/* *mode -> NSOptionFlags */
+/* COMMENTED OUT
+replace "setMode:(int)" with "setMode:(NSOptionFlags)" warning "64BIT: This was int before the conversion"
+replace "(int)setMode" with "(NSOptionFlags)setMode" warning "64BIT: This was int before the conversion"
+replace "initWithPickerMode:(int)" with "initWithPickerMode:(NSOptionFlags)" warning "64BIT: This was int before the conversion"
+*/
+
+/* *flags -> NSOptionFlags */
+/* COMMENTED OUT
+replace "modifierFlags:(unsigned int)" with "modifierFlags:(NSOptionFlags)"
+replace "(unsigned int)modifierFlags" with "(NSOptionFlags)modifierFlags"
+replace "unsigned int _modifierFlags" with "NSOptionFlags _modifierFlags"
+replace "(int)mouseDownFlags" with "(NSOptionFlags)mouseDownFlags" warning "64BIT: This was int before the conversion"
+replace "(int)resizeFlags" with "(NSOptionFlags)resizeFlags" warning "64BIT: This was int before the conversion"
+replace "flags:(<type>)" with "flags:(NSOptionFlags)" where ("<type>") isOneOf {("unsigned<w sp>int"), ("unsigned")}
+replace "flags:(<type>)" with "flags:(NSOptionFlags *)" where ("<type>") isOneOf {("unsigned<w sp>int<w sp1>*"), ("unsigned<w sp2>*")}
+replace "flags:(int)" with "flags:(NSOptionFlags)" warning "64BIT: This was int before the conversion"
+*/
+
+/* misc NSOptionFlags */
+/* COMMENTED OUT
+replace "(int)highlightsBy" with "(NSOptionFlags)highlightsBy" warning "64BIT: This was int before the conversion"
+replace "setHighlightsBy:(int)" with "setHighlightsBy:(NSOptionFlags)" warning "64BIT: This was int before the conversion"
+replace "(int)showsStateBy" with "(NSOptionFlags)showsStateBy" warning "64BIT: This was int before the conversion"
+replace "setShowsStateBy:(int)" with "setShowsStateBy:(NSOptionFlags)" warning "64BIT: This was int before the conversion"
+replace "(int)sendActionOn:(int)" with "(NSOptionFlags)sendActionOn:(NSOptionFlags)" warning "64BIT: This was int before the conversion"
+replace "(void)sendActionOn:(int)" with "(void)sendActionOn:(NSOptionFlags)" warning "64BIT: This was int before the conversion"
+*/
+
+/* need to add these */
+/* NSBinder_Private.h
+	NSBinder_Private.h: - (NSUInteger)_bindingAdaptorMethodsNeededMask;
+NSKeyBindingManager.m
+	NSKeyBindingManager.m: - (void) _monitorKeyBinding:(unichar)aKey flags:(NSUInteger)modFlags;
+NSMouseTracker.h
+	NSMouseTracker.h: - (void)setEventMask:(NSInteger)eventMask;
+	NSMouseTracker.h: - (NSInteger)eventMask;
+	NSMouseTracker.h: - (void)setTrackingConstraintKeyMask:(NSUInteger)keyMask;
+	NSMouseTracker.h: - (NSUInteger)trackingConstraintKeyMask;
+NSMenu_Internal.h
+	NSMenu_Internal.h: - (NSUInteger)_rawKeyEquivalentModifierMask;
+	NSMenu_Internal.h: - (NSUInteger)_desiredKeyEquivalentModifierMask;
+NSLayoutManager_Private.h
+	NSLayoutManager_Private.h: - (NSUInteger)_tableFlags;
+	NSLayoutManager_Private.h: - _setTableFlags:(NSUInteger)flags;
+NSLanguage.h
+	NSLanguage.h: - (NSUInteger) caseConversionFlags;
+NSFrameView.h
+	NSFrameView.h: - (NSUInteger)_shadowFlags;
+NSWindow_Private.h
+	NSWindow_Private.h: - (NSUInteger)_autoPositionMask;
+	NSWindow_Private.h: - (void)_setAutoPositionMask:(NSUInteger)autoPositionMask;
+*/
+
+
+/* typedef unsigned int -> typedef NSOptionFlags, for typedef associated with enumeration */
+/* COMMENTED OUT
+replace "typedef unsigned int<w space><t typename>;" with "typedef NSOptionFlags<w space><t typename>;"
+*/
+
+/* typedef unsigned int -> typedef NSUInteger (instead of NSOptionFlags) */
+replace "typedef unsigned int<w space><t typename>;" with "typedef NSUInteger<w space><t typename>;"
+
+/* special cases for long -> NSInteger */
+replace "(long)<w sp><t methodName>" with "(NSInteger)<w sp><t methodName>" where ("<t methodName>") isOneOf {
+    ("conversationIdentifier"), ("oldConversation"), ("newConversation")
+}
+
+/* remaining longs */
+replace "<type>" with "UNSIGNEDLONG_DONTREPLACE" where ("<type>") isOneOf {("unsigned<w sp>long<w sp>int"), ("long<w sp>unsigned<w sp>int"), ("unsigned<w sp>long"), ("long<w sp>unsigned")} warning "64BIT: Inspect use of unsigned long"
+replace "<type>" with "LONG_DONTREPLACE" where ("<type>") isOneOf {("signed<w sp>long<w sp>int") ("long<w sp>signed<w sp>int"), ("signed<w sp>long"), ("long<w sp>signed"), ("long<w sp>int"), ("long")} warning "64BIT: Inspect use of long"
+
+/* unsigned int */
+replace "<type>" with "NSUInteger" where ("<type>") isOneOf {("unsigned<w sp>int"), ("int<w sp>unsigned")}
+replace "<type>" with "NSInteger" where ("<type>") isOneOf {("signed<w sp>int"), ("int<w sp>signed"), ("signed"), ("int")}
+
+/* safe variants of stand-alone unsigned */
+replace "(unsigned)" with "(NSUInteger)"
+replace "(unsigned *)" with "(NSUInteger *)"
+
+/* replace unsafe (free standing) variants of unsigned, and warn */
+/* ??? Should this warn? Decided not to */
+replace "unsigned" with "NSUInteger" 
+/* warning "64BIT: This was unsigned before the conversion" */
+
+
+/* Architecture */
+replace "__ppc__" with "__ppc__" warning "64BIT: May need to augment __ppc__ with __ppc64__, since __ppc__ is just for PPC 32-bit"
+
+
+/* Restore typecast */
+/* COMMENTED OUT
+replace "(CAST_UNSIGNED_INT)" with "(unsigned int)"
+replace "(CAST_UNSIGNED_LONG_INT)" with "(unsigned long int)"
+replace "(CAST_UNSIGNED_LONG)" with "(unsigned long)"
+replace "(GENERIC_UNSIGNED_INT)" with "(unsigned int,"
+replace "(GENERIC_UNSIGNED_LONG)" with "(unsigned long,"
+*/
+
+/* Restore bitfields */
+replace "UNSIGNEDINT_BITFIELD_DONTREPLACE<w space><t bitfield>:<t bit>;" with "unsigned int<w space><t bitfield>:<t bit>;"
+replace "UNSIGNEDINT_BITFIELD_DONTREPLACE<w space>:<t bit>;" with "unsigned int<w space>:<t bit>;"
+replace "UNSIGNED_BITFIELD_DONTREPLACE<w space><t bitfield>:<t bit>;" with "unsigned<w space><t bitfield>:<t bit>;"
+replace "UNSIGNED_BITFIELD_DONTREPLACE<w space>:<t bit>;" with "unsigned<w space>:<t bit>;"
+replace "INT_BITFIELD_DONTREPLACE<w space><t bitfield>:<t bit>;" with "int<w space><t bitfield>:<t bit>;"
+replace "INT_BITFIELD_DONTREPLACE<w space>:<t bit>;" with "int<w space>:<t bit>;"
+replace "UNSIGNEDLONG_BITFIELD_DONTREPLACE<w space><t bitfield>:<t bit>;" with "unsigned long<w space><t bitfield>:<t bit>;"
+replace "UNSIGNEDLONG_BITFIELD_DONTREPLACE<w space>:<t bit>;" with "unsigned long<w space>:<t bit>;"
+replace "LONG_BITFIELD_DONTREPLACE<w space><t bitfield>:<t bit>;" with "long<w space><t bitfield>:<t bit>;"
+replace "LONG_BITFIELD_DONTREPLACE<w space>:<t bit>;" with "long<w space>:<t bit>;"
+
+/* Restore the protected ones */
+replace "INT_DONTREPLACE" with "int"
+replace "LONG_DONTREPLACE" with "long"
+replace "UNSIGNEDINT_DONTREPLACE" with "unsigned int"
+replace "UNSIGNEDLONG_DONTREPLACE" with "unsigned long"
+replace "UNSIGNED_DONTREPLACE" with "unsigned"
+
+replace "UNSIGNEDCHAR_DONTREPLACE" with "unsigned char"
+replace "CHARUNSIGNED_DONTREPLACE" with "char unsigned"
+replace "UNSIGNEDCONSTCHAR_DONTREPLACE" with "unsigned const char"
+replace "UNSIGNEDSHORT_DONTREPLACE" with "unsigned short"
+replace "SHORTUNSIGNED_DONTREPLACE" with "short unsigned"
+replace "UNSIGNEDLONGLONG_DONTREPLACE" with "unsigned long long" 
+replace "LONGLONGUNSIGNED_DONTREPLACE" with "long long unsigned" 
+replace "LONGLONG_DONTREPLACE" with "long long" 
+replace "LONGDOUBLE_DONTREPLACE" with "long double" 
+
+
+
+
+
+
+
+/******************** CGFloat ********************/
+
+
+/* Usage:
+    For AppKit: find . -name '*.[mch]' -print | xargs tops -scriptfile ~/Desktop/64bit/CGFloat.tops
+    For Foundation: find . -name '*.[mch]' -print | grep -v NSByteOrder | xargs tops -scriptfile ~/Desktop/64bit/CGFloat.tops
+*/
+ 
+/* Protect type-specific API */
+replace "(float)<t methodName>" with "(FLOAT_DONTREPLACE)<t methodName>" where ("<t methodName>") isOneOf {("floatValue"), ("floatForKey"), ("_web_floatForKey"), ("decodeFloatForKey")}
+replace "<t methodName>:(float)" with "<t methodName>:(FLOAT_DONTREPLACE)" where ("<t methodName>") isOneOf {("initWithFloat"), ("numberWithFloat"), ("setFloatValue"), ("_web_setFloat"), ("encodeFloat"), ("setFloat")}
+replace "scanFloat:(float *)" with "scanFloat:(FLOAT_DONTREPLACE *)"
+replace "float<w space>floatValue" with "FLOAT_DONTREPLACE<w space>floatValue"
+
+/* Volume and pitch base should be float */
+replace "(float)<t methodName>" with "(FLOAT_DONTREPLACE)<t methodName>" where ("<t methodName>") isOneOf {("volume"), ("_volume"), ("_pitchBase")}
+replace "<t methodName>:(float)" with "<t methodName>:(FLOAT_DONTREPLACE)" where ("<t methodName>") isOneOf {("_setVolume"), ("setVolume"), ("_setPitchBase")}
+replace "float<w space>_fVolume" with "FLOAT_DONTREPLACE<w space>_fVolume"
+
+/* hyphenationFactor and tighteningFactor should be float */
+replace "(float)<t methodName>" with "(FLOAT_DONTREPLACE)<t methodName>" where ("<t methodName>") isOneOf {("hyphenationFactor"), ("tighteningFactorForTruncation"), ("hyphenationFactorForGlyphAtIndex")}
+replace "<t methodName>:(float)" with "<t methodName>:(FLOAT_DONTREPLACE)" where ("<t methodName>") isOneOf {("setHyphenationFactor"), ("setTighteningFactorForTruncation")}
+
+/* frame rate and rate should be float */
+replace "(float)<t methodName>" with "(FLOAT_DONTREPLACE)<t methodName>" where ("<t methodName>") isOneOf {("rate"), ("frameRate"), ("_rate"), ("_normalSpeakingRate")}
+replace "<t methodName>:(float)" with "<t methodName>:(FLOAT_DONTREPLACE)" where ("<t methodName>") isOneOf {("setFrameRate"), ("setRate"), ("_setRate")}
+replace "float<w space>_fRate" with "FLOAT_DONTREPLACE<w space>_fRate"
+
+/* compression factor should be float */
+replace "factor:(float)" with "factor:(FLOAT_DONTREPLACE)"
+replace "factor:(float *)" with "factor:(FLOAT_DONTREPLACE *)"
+
+/* pressure, rotation should be float */
+replace "float<w space>pressure" with "FLOAT_DONTREPLACE<w space>pressure"
+replace "(float)<t methodName>" with "(FLOAT_DONTREPLACE)<t methodName>" where ("<t methodName>") isOneOf {("pressure"), ("tangentialPressure"), ("rotation")}
+
+/* animation progress and value should be float? */
+replace "typedef<w space>float<w space1>NSAnimationProgress" with "typedef<w space>FLOAT_DONTREPLACE<w space1>NSAnimationProgress"
+replace "float<w space>_framesPerSecond" with "FLOAT_DONTREPLACE <w space>_framesPerSecond"
+replace "(float)currentValue" with "(FLOAT_DONTREPLACE)currentValue"
+replace "(float)animation:" with "(FLOAT_DONTREPLACE)animation:"
+
+/* time intervals should be NSTimeInterval, but for now leave as float, because we can't replace these compatibly */
+replace "setPeriodicDelay:(float)" with "setPeriodicDelay:(FLOAT_DONTREPLACE)"
+replace "getPeriodicDelay:(float *)" with "getPeriodicDelay:(FLOAT_DONTREPLACE *)"
+replace "interval:(float)" with "interval:(FLOAT_DONTREPLACE)"
+replace "interval:(float *)" with "interval:(FLOAT_DONTREPLACE *)"
+replace "_setDefaultButtonCycleTime:(float)" with "_setDefaultButtonCycleTime:(FLOAT_DONTREPLACE)"
+replace "(float)<w space>_defaultButtonCycleTime" with "(FLOAT_DONTREPLACE)<w space>_defaultButtonCycleTime"
+
+/* float.h */
+
+replace "<float.h>" with "<FLOAT_DONTREPLACE.h>"
+
+
+/* fix NSWindow_Private.h _percent and #import <float.h> by hand */
+
+
+replace "float" with "CGFloat"
+
+/* Restore the protected ones */
+replace "FLOAT_DONTREPLACE" with "float"
+
+
+
+
+
+/******************** Warnings ********************/
+
+/**** Formatting ****/
+
+replace "printf<w w1>(<w w2><format>" with "printf<w w1>(<w w2>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "sprintf<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "sprintf<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "snprintf<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6><format>" with "snprintf<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "vsnprintf<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6><format>" with "vsnprintf<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "fprintf<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "fprintf<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "vfprintf<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "vfprintf<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "printf_l<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "printf_l<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "sprintf_l<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6><format>" with "sprintf_l<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "snprintf_l<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6><e e3><w w7>,<w w8><format>" with "snprintf_l <w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6><e e3><w w7>,<w w8>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "vsnprintf_l<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6><e e3><w w7>,<w w8><format>" with "vsnprintf_l <w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6><e e3><w w7>,<w w8>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "fprintf_l<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6><format>" with "fprintf_l<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "vfprintf_l<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6><format>" with "vfprintf_l<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+
+replace "scanf<w w1>(<w w2><format>" with "scanf<w w1>(<w w2>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments (when scanning, extra care: %f and %lf need to be distinguished)"
+replace "sscanf<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "sscanf<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments (when scanning, extra care: %f and %lf need to be distinguished)"
+replace "fscanf<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "fscanf<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments (when scanning, extra care: %f and %lf need to be distinguished)"
+replace "vscanf<w w1>(<w w2><format>" with "vscanf<w w1>(<w w2>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments (when scanning, extra care: %f and %lf need to be distinguished)"
+replace "vsscanf<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "vsscanf<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments (when scanning, extra care: %f and %lf need to be distinguished)"
+replace "vfscanf<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "vfscanf<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments (when scanning, extra care: %f and %lf need to be distinguished)"
+replace "scanf_l<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "scanf_l<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments (when scanning, extra care: %f and %lf need to be distinguished)"
+replace "sscanf_l<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6><format>" with "sscanf_l<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments (when scanning, extra care: %f and %lf need to be distinguished)"
+replace "fscanf_l<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6><format>" with "fscanf_l<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments (when scanning, extra care: %f and %lf need to be distinguished)"
+replace "vscanf_l<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "vscanf_l<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments (when scanning, extra care: %f and %lf need to be distinguished)"
+replace "vsscanf_l<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6><format>" with "vsscanf_l<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments (when scanning, extra care: %f and %lf need to be distinguished)"
+replace "vfscanf_l<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6><format>" with "vfscanf_l<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments (when scanning, extra care: %f and %lf need to be distinguished)"
+
+replace "stringWithFormat:<w w1><format>" with "stringWithFormat:<w w1>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "stringByAppendingFormat:<w w1><format>" with "stringByAppendingFormat:<w w1>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "initWithFormat:<w w1><format>" with "initWithFormat:<w w1>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "localizedStringWithFormat:<w w1><format>" with "localizedStringWithFormat:<w w1>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "appendFormat:<w w1><format>" with "appendFormat:<w w1>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+
+replace "_NSParseWithFormat<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "_NSParseWithFormat<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments (when scanning, extra care: %f and %lf need to be distinguished)"
+
+replace "NSLog<w w1>(<w w2><format>" with "NSLog<w w1>(<w w2>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+
+replace "NSAssert1<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "NSAssert1<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "NSAssert2<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "NSAssert2<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "NSAssert3<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "NSAssert3<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "NSAssert4<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "NSAssert4<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "NSAssert5<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "NSAssert5<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "NSCAssert1<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "NSCAssert1<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "NSCAssert2<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "NSCAssert2<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "NSCAssert3<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "NSCAssert3<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "NSCAssert4<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "NSCAssert4<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "NSCAssert5<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "NSCAssert5<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+
+replace "PBXAssert" with "XCAssert"
+replace "PBXAssert0" with "XCAssert"
+replace "PBXAssert1" with "XCAssert"
+replace "PBXAssert2" with "XCAssert"
+replace "PBXAssert3" with "XCAssert"
+replace "PBXAssert4" with "XCAssert"
+replace "PBXAssert5" with "XCAssert"
+replace "PBXAssert6" with "XCAssert"
+replace "PBXAssert7" with "XCAssert"
+
+replace "TSAssert" with "XCAssert"
+replace "TSAssert0" with "XCAssert"
+replace "TSAssert1" with "XCAssert"
+replace "TSAssert2" with "XCAssert"
+replace "TSAssert3" with "XCAssert"
+replace "TSAssert4" with "XCAssert"
+replace "TSAssert5" with "XCAssert"
+replace "TSAssert6" with "XCAssert"
+replace "TSAssert7" with "XCAssert"
+replace "TSAssertClass" with "XCAssertClass"
+replace "TSAssertNilOrClass" with "XCAssertNilOrClass"
+replace "TSAssertProtocol" with "XCAssertProtocol"
+replace "TSAssertNilOrProtocol" with "XCAssertNilOrProtocol"
+replace "TSAssertRespondsToSelector" with "XCAssertRespondsToSelector"
+replace "TSAssertNilOrRespondsToSelector" with "XCAssertNilOrRespondsToSelector"
+replace "TSAssertString" with "XCAssertString"
+replace "TSAssertNilOrString" with "XCAssertNilOrString"
+replace "TSAssertNonEmptyString" with "XCAssertNonEmptyString"
+replace "TSAssertNilOrNonEmptyString" with "XCAssertNilOrNonEmptyString"
+
+replace "XCAssert<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "XCAssert<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+
+replace "TSLog" with "XCLog"
+replace "TSLogIndent" with "XCLogIndent"
+replace "TSLogOutdent" with "XCLogOutdent"
+
+replace "XCLog<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6><format>" with "XCLog<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "XCLogIndent<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6><format>" with "XCLogIndent<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "XCLogOutdent<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6><format>" with "XCLogOutdent<w w1>(<w w2><e e1><w w3>,<w w4><e e2><w w5>,<w w6>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+
+replace "MARKTIME2<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "MARKTIME2<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+
+replace "NSRunAlertPanelRelativeToWindow<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "NSRunAlertPanelRelativeToWindow<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments; besides, this function is deprecated"
+replace "NSRunInformationalAlertPanelRelativeToWindow<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "NSRunInformationalAlertPanelRelativeToWindow<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments; besides, this function is deprecated"
+replace "NSRunCriticalAlertPanelRelativeToWindow<w w1>(<w w2><e e1><w w3>,<w w4><format>" with "NSRunCriticalAlertPanelRelativeToWindow<w w1>(<w w2><e e1><w w3>,<w w4>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments; besides, this function is deprecated"
+
+replace "NSBeginAlertSheet<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><e3><w w7>,<w w8><e4><w w9>,<w w10><e5><w w11>,<w w12><e6><w w13>,<w w14><e7><w w15>,<w w16><e8><w w17>,<w w18><e9><w w19>,<w w20><format>"
+with "NSBeginAlertSheet<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><e3><w w7>,<w w8><e4><w w9>,<w w10><e5><w w11>,<w w12><e6><w w13>,<w w14><e7><w w15>,<w w16><e8><w w17>,<w w18><e9><w w19>,<w w20>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" 
+warning "64BIT: Check formatting arguments"
+replace "NSBeginInformationalAlertSheet<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><e3><w w7>,<w w8><e4><w w9>,<w w10><e5><w w11>,<w w12><e6><w w13>,<w w14><e7><w w15>,<w w16><e8><w w17>,<w w18><e9><w w19>,<w w20><format>"
+with "NSBeginInformationalAlertSheet<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><e3><w w7>,<w w8><e4><w w9>,<w w10><e5><w w11>,<w w12><e6><w w13>,<w w14><e7><w w15>,<w w16><e8><w w17>,<w w18><e9><w w19>,<w w20>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" 
+warning "64BIT: Check formatting arguments"
+replace "NSBeginCriticalAlertSheet <w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><e3><w w7>,<w w8><e4><w w9>,<w w10><e5><w w11>,<w w12><e6><w w13>,<w w14><e7><w w15>,<w w16><e8><w w17>,<w w18><e9><w w19>,<w w20><format>"
+with "NSBeginCriticalAlertSheet <w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><e3><w w7>,<w w8><e4><w w9>,<w w10><e5><w w11>,<w w12><e6><w w13>,<w w14><e7><w w15>,<w w16><e8><w w17>,<w w18><e9><w w19>,<w w20>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" 
+warning "64BIT: Check formatting arguments"
+
+replace "NSGetAlertPanel<w w1>(<w w2><e1>,<w w3><format>" with "NSGetAlertPanel<w w1>(<w w2><e1>,<w w3>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "NSGetInformationalAlertPanel<w w1>(<w w2><e1>,<w w3><format>" with "NSGetInformationalAlertPanel<w w1>(<w w2><e1>,<w w3>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "NSGetCriticalAlertPanel<w w1>(<w w2><e1>,<w w3><format>" with "NSGetCriticalAlertPanel<w w1>(<w w2><e1>,<w w3>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+
+replace "NSURLReportFatalError<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><e3><w w7>,<w w8><format>" with "NSURLReportFatalError<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><e3><w w7>,<w w8>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "NSURLReportError<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><e3><w w7>,<w w8><format>" with "NSURLReportError<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><e3><w w7>,<w w8>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+replace "NSURLLog<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><e3><w w7>,<w w8><e4><w w9>,<w w10><format>" with "NSURLLog<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><e3><w w7>,<w w8><e4><w w9>,<w w10>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+
+replace "handleFailureInMethod:<w w1><e1><w w2>object:<w w3><e2><w w4>fileName:<w w5><e3><w w6>lineNumber:<w w7><e4><w w8>messageFormat:<w w9><format>"
+with "handleFailureInMethod:<w w1><e1><w w2>object:<w w3><e2><w w4>fileName:<w w5><e3><w w6>lineNumber:<w w7><e4><w w8>messageFormat:<w w9>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END"
+warning "64BIT: Check formatting arguments"
+replace "handleFailureInFunction:<w w1><e1><w w2>fileName:<w w3><e2><w w4>lineNumber:<w w5><e3><w w6>messageFormat:<w w7><format>"
+with "handleFailureInFunction:<w w1><e1><w w2>fileName:<w w3><e2><w w4>lineNumber:<w w5><e3><w w6>messageFormat:<w w7>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END"
+warning "64BIT: Check formatting arguments"
+replace "parseError:<w w1><format>" with "parseError:<w w1>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+
+replace "predicateWithFormat:<w w1><format>" with "predicateWithFormat:<w w1>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+
+replace "[<w w1><e1><w w2>raise:<w w3><e2><w w4>format:<w w5><format>" with "[<w w1><e1><w w2>raise:<w w3><e2><w w4>format:<w w5>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" warning "64BIT: Check formatting arguments"
+
+replace "CFStringCreateWithFormat<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><format>" 
+with "CFStringCreateWithFormat<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" 
+warning "64BIT: Check formatting arguments"
+replace "CFStringCreateWithFormatAndArguments<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><format>" 
+with "CFStringCreateWithFormatAndArguments<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" 
+warning "64BIT: Check formatting arguments"
+replace "CFStringAppendFormat<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><format>" 
+with "CFStringAppendFormat<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" 
+warning "64BIT: Check formatting arguments"
+replace "CFStringAppendFormatAndArguments<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><format>" 
+with "CFStringAppendFormatAndArguments<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><format>" 
+warning "64BIT: Check formatting arguments"
+replace "_CFStringCreateWithFormatAndArgumentsAux<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><e3><w w7>,<w w8><format>" 
+with "_CFStringCreateWithFormatAndArgumentsAux<w w1>(<w w2><e1><w w3>,<w w4><e2><w w5>,<w w6><e3><w w7>,<w w8>64BIT_CHECKFORMAT_START<format>64BIT_CHECKFORMAT_END" 
+warning "64BIT: Check formatting arguments"
+
+
+
+/**** Old archiving ****/
+
+replace "decodeValuesOfObjCTypes:" with same warning "64BIT: Make sure values being decoded correspond to the types"
+replace "decodeArrayOfObjCType:" with same warning "64BIT: Make sure values being decoded correspond to the types"
+
+replace "encodeValuesOfObjCTypes:" with same warning "64BIT: Make sure values being encoded correspond to the types"
+replace "encodeArrayOfObjCType:" with same warning "64BIT: Make sure values being encoded correspond to the types"
+
+
+/**** Keyed archiving ****/
+
+replace "[<e expr1> encodeInt:<e expr2> forKey:<e expr3>]" with "[<e expr1> encodeInteger:<e expr2> forKey:<e expr3>]"
+replace "[<e expr1> decodeIntForKey:<e expr3>]" with "[<e expr1> decodeIntegerForKey:<e expr3>]"
+
+replace "[<e expr1> encodeFloat:<e expr2> forKey:<e expr3>]" with "[<e expr1> encodeDouble:<e expr2> forKey:<e expr3>]"
+replace "[<e expr1> decodeFloatForKey:<e expr3>]" with "[<e expr1> decodeDoubleForKey:<e expr3>]"
+
+
+/**** INT_MAX, etc ****/
+
+replace "<t thing>" with same where ("<t thing>") isOneOf 
+	{("INT_MAX"), ("UINT_MAX"), ("INT_MIN"), ("FLT_MAX"), ("FLT_EPSILON"), ("FLT_MIN")}
+	warning "64BIT: Inspect use of MAX/MIN constant; consider one of LONG_MAX/LONG_MIN/ULONG_MAX/DBL_MAX/DBL_MIN, or better yet, NSIntegerMax/Min, NSUIntegerMax, CGFLOAT_MAX/MIN"
+
+
+/**** pointer casting ****/
+
+replace "(NSInteger *)&" with same warning "64BIT: Inspect pointer casting"
+replace "(NSUInteger *)&" with same warning "64BIT: Inspect pointer casting"
+replace "(CGFloat *)&" with same warning "64BIT: Inspect pointer casting"
+
+
+/**** sizeof, encode ****/
+
+/* sizeof constructs that we shouldn't warn about */
+
+replace "sizeof(<expr> **)" with "SIZEOF_DONTREPLACE(<expr> **)"
+replace "sizeof(<expr> *)" with "SIZEOF_DONTREPLACE(<expr> *)"
+
+replace "sizeof(<expr>)" with "SIZEOF_DONTREPLACE(<expr>)" where ("<expr>") isOneOf 
+	{("id"), ("char"), ("BOOL"), ("unsigned char"), ("short"), ("unsigned short"), ("long long"), ("unsigned long long"), ("double"),
+	 ("unichar"), ("UniChar"), ("NSRange"), ("NSRect"), ("NSPoint"), ("NSSize"),
+	 ("AudioStreamBasicDescription"), ("AudioStreamPacketDescription"),
+	 ("CMProfileLocation"), ("CM2Header"), ("CMAppleProfileHeader"), ("CMProfileMD5"),
+	 ("ATSUFontFeatureSelector"), ("ATSUFontVariationAxis"), ("ATSUFontVariationValue"), ("ATSUAttributeTag"), ("WindowRef")}
+
+/* now warn; we try to catch occurences of sizeof without the parens as well */
+
+replace "sizeof" with same warning "64BIT: Inspect use of sizeof"
+
+/* and restore the previous stuff */
+
+replace "SIZEOF_DONTREPLACE" with "sizeof"
+
+/* @encode constructs that we shouldn't warn about */
+
+replace "@encode(<expr>)" with "ENCODE_DONTREPLACE(<expr>)" where ("<expr>") isOneOf 
+	{("void *"), ("id"), ("char"), ("BOOL"), ("unsigned char"), ("short"), ("unsigned short"), ("long long"), ("unsigned long long"), ("double"),
+	 ("unichar"), ("UniChar"), ("NSRange"), ("NSRect"), ("NSPoint"), ("NSSize"),
+	 ("NSString *"), ("NSColor *"), ("AudioStreamBasicDescription"), ("AudioStreamPacketDescription"),
+	 ("CMProfileLocation"), ("CM2Header"), ("CMAppleProfileHeader"), ("CMProfileMD5"),
+	 ("ATSUFontFeatureSelector"), ("ATSUFontVariationAxis"), ("ATSUFontVariationValue"), ("ATSUAttributeTag"), ("WindowRef")}
+
+/* now warn */
+
+replace "@encode(<expr>)" with same warning "64BIT: Inspect use of @encode"
+
+/* and restore the previous stuff */
+
+replace "ENCODE_DONTREPLACE" with "@encode"
+
+
+/**** Comparator functions ****/
+/* COMMENTED OUT 
+replace "[<e expr> sortedArrayUsingFunction:<e expr2> context:<e expr3>]" with same warning "64BIT: Please make sure the comparator function returns an int, not NSInteger"
+replace "[<e expr> sortedArrayUsingFunction:<e expr2> context:<e expr3> hint:<e expr4>]" with same warning "64BIT: Please make sure the comparator function returns an int, not NSInteger"
+replace "[<e expr> sortUsingFunction:<e expr2> context:<e expr3>]" with same warning "64BIT: Please make sure the comparator function returns an int, not NSInteger"
+replace "CFArrayBSearchValues(<e expr>, <e expr2>, <e expr3>, <e expr4>, <e expr5>)" with same warning "64BIT: Please make sure the comparator function returns an int, not NSInteger"
+replace "CFArraySortValues(<e expr>, <e expr2>, <e expr3>, <e expr4>)" with same warning "64BIT: Please make sure the comparator function returns an int, not NSInteger"
+replace "CFTreeSortChildren(<e expr>, <e expr2>, <e expr3>)" with same warning "64BIT: Please make sure the comparator function returns an int, not NSInteger"
+replace "CFMergeSortArray(<e expr>, <e expr2>, <e expr3>, <e expr4>, <e expr5>)" with same warning "64BIT: Please make sure the comparator function returns an int, not NSInteger"
+replace "CFQSortArray(<e expr>, <e expr2>, <e expr3>)" with same warning "64BIT: Please make sure the comparator function returns an int, not NSInteger"
+*/
+
+
+/* Math functions, replaced with tgmath functions, but not in C++ where tgmath is still not working 100% */
+
+replace "roundf(<e expr>)" with "64BIT_CHOOSE(round,_CGFloatRound)(<e expr>)"
+replace "truncf(<e expr>)" with "64BIT_CHOOSE(trunc,_CGFloatTrunc)(<e expr>)"
+replace "fmodf(<w w1><e1><w w2>,<w w3><e2><w w4>)" with "64BIT_CHOOSE(fmod,_CGFloatFmod)(<w w1><e1><w w2>,<w w3><e2><w w4>)"
+replace "rintf(<e expr>)" with "64BIT_CHOOSE(rint,_CGFloatRintf)(<e expr>)"
+replace "floorf(<e expr>)" with "64BIT_CHOOSE(floor,_CGFloatFloor)(<e expr>)"
+replace "ceilf(<e expr>)" with "64BIT_CHOOSE(ceil,_CGFloatCeil)(<e expr>)"
+replace "powf(<w w1><e1><w w2>,<w w3><e2><w w4>)" with "64BIT_CHOOSE(pow,_CGFloatPow)(<w w1><e1><w w2>,<w w3><e2><w w4>)"
+replace "fabsf(<e expr>)" with "64BIT_CHOOSE(fabs,_CGFloatFabs)(<e expr>)"
+replace "logf(<e expr>)" with "64BIT_CHOOSE(log,_CGFloatLog)(<e expr>)"
+replace "expf(<e expr>)" with "64BIT_CHOOSE(exp,_CGFloatExp)(<e expr>)"
+replace "lrintf(<e expr>)" with "64BIT_CHOOSE(lrint,_CGFloatLrint)(<e expr>)"
+replace "llrintf(<e expr>)" with "64BIT_CHOOSE(llrint,_CGFloatLlrint)(<e expr>)"
+replace "lroundf(<e expr>)" with "64BIT_CHOOSE(lround,_CGFloatLround)(<e expr>)"
+replace "llroundf(<e expr>)" with "64BIT_CHOOSE(llround,_CGFloatLlround)(<e expr>)"
+replace "copysignf(<w w1><e1><w w2>,<w w3><e2><w w4>)" with "64BIT_CHOOSE(copysign,_CGFloatCopysign)(<w w1><e1><w w2>,<w w3><e2><w w4>)"
+replace "sqrtf(<e expr>)" with "64BIT_CHOOSE(sqrt,_CGFloatSqrt)(<e expr>)"
+replace "modff(<w w1><e1><w w2>,<w w3><e2><w w4>)" with "64BIT_CHOOSE(modf,_CGFloatModf)(<w w1><e1><w w2>,<w w3><e2><w w4>)"
+replace "log10f(<e expr>)" with "64BIT_CHOOSE(log10,_CGFloatLog10)(<e expr>)"
+replace "log2f(<e expr>)" with "64BIT_CHOOSE(log2,_CGFloatLog2)(<e expr>)"
+replace "exp2f(<e expr>)" with "64BIT_CHOOSE(exp2,_CGFloatExp2)(<e expr>)"
+replace "expm1f(<e expr>)" with "64BIT_CHOOSE(expm1,_CGFloatExpm1)(<e expr>)"
+replace "fminf(<w w1><e1><w w2>,<w w3><e2><w w4>)" with "64BIT_CHOOSE(fmin,_CGFloatMin)(<w w1><e1><w w2>,<w w3><e2><w w4>)"
+replace "fmaxf(<w w1><e1><w w2>,<w w3><e2><w w4>)" with "64BIT_CHOOSE(fmax,_CGFloatMax)(<w w1><e1><w w2>,<w w3><e2><w w4>)"
+
+
+/* Calls to scanInt:, scanHexInt:, and scanFloat: */
+
+replace "[<e expr> scanInt:<e expr2>]" with same warning "64BIT: scanInt: argument is pointer to int, not NSInteger; you can use scanInteger:"
+replace "[<e expr> scanHexInt:<e expr2>]" with same warning "64BIT: scanHexInt: argument is pointer to int, not NSInteger"
+replace "[<e expr> scanFloat:<e expr2>]" with same warning "64BIT: scanFloat: argument is pointer to float, not CGFloat"
+
+
+/* Calls to CFNumberCreate and CFNumberGetValue */
+
+replace "CFNumberCreate" with same warning "64BIT: Check CFNumberCreate() argument"
+replace "CFNumberGetValue" with same warning "64BIT: Check CFNumberGetValue() argument"
+
+
+/* intValue */
+
+replace "[<e expr> intValue]" with "[<e expr> integerValue]"
+replace "[<e expr> unsignedIntValue]" with "[<e expr> unsignedIntegerValue]"
+replace "[<e expr> numberWithInt:<e expr2>]" with "[<e expr> numberWithInteger:<e expr2>]"
+replace "[<e expr> numberWithUnsignedInt:<e expr2>]" with "[<e expr> numberWithUnsignedInteger:<e expr2>]"
+
+/* floatValue */
+
+replace "[<e expr> floatValue]" with "[<e expr> doubleValue]"
+replace "[<e expr> numberWithFloat:<e expr2>]" with "[<e expr> numberWithDouble:<e expr2>]"
+
+
+/* NSMapTable, NSHashTable creation */
+
+replace "NSCreateMapTableWithZone" with same warning  "64BIT: Check callbacks"
+replace "NSCreateMapTable" with same warning  "64BIT: Check callbacks"
+replace "NSCreateHashTableWithZone" with same warning  "64BIT: Check callbacks"
+replace "NSCreateHashTable" with same warning  "64BIT: Check callbacks"
+
+/* Cont'd intValue, floatValue */
+
+replace "[<e expr> initWithFloat:<e expr2>]" with "[<e expr> initWithDouble:<e expr2>]"
+replace "[<e expr> initWithInt:<e expr2>]" with "[<e expr> initWithInteger:<e expr2>]"
+replace "[<e expr> initWithUnsignedInt:<e expr2>]" with "[<e expr> initWithUnsignedInteger:<e expr2>]"
+replace "[<e expr> setIntValue:<e expr2>]" with "[<e expr> setIntegerValue:<e expr2>]"
+replace "[<e expr> setFloatValue:<e expr2>]" with "[<e expr> setDoubleValue:<e expr2>]"
+
+replace "@selector(intValue)" with "@selector(integerValue)"
+replace "@selector(unsignedIntValue)" with "@selector(unsignedIntegerValue)"
+replace "@selector(floatValue)" with "@selector(doubleValue)"
+replace "@selector(initWithFloat:)" with "@selector(initWithDouble:)"
+replace "@selector(initWithInt:)" with "@selector(initWithInteger:)"
+replace "@selector(initWithUnsignedInt:)" with "@selector(initWithUnsignedInteger:)"
+replace "@selector(setIntValue:)" with "@selector(setIntegerValue:)"
+replace "@selector(setFloatValue:)" with "@selector(setDoubleValue:)"
